@@ -1,0 +1,152 @@
+
+
+.sectionHeading{
+  
+
+    margin-bottom:35px;
+
+}
+
+.sectionHeading h2{
+    
+
+    color:var(--text);
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+
+}
+
+.light-topAttractions .sectionHeading h2{
+    color: #151d2f;
+}
+
+.sectionHeading p{
+
+    color:var(--text-secondary);
+
+}
+
+.attractionsGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:28px;
+    position: relative;
+
+}
+
+.attractionCard{
+
+    background:transparent;
+
+ 
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.attractionCard:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.15);
+
+}
+
+.attractionImage{
+
+    position:relative;
+
+    height:220px;
+
+    overflow:hidden;
+
+}
+
+.attractionImage img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.attractionCard:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.attractionRating{
+
+    position:absolute;
+
+    top:16px;
+
+    right:16px;
+
+    background:#fff;
+
+    color:#222;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+}
+
+.attractionRating svg{
+
+    color:#FFC107;
+
+}
+
+.attractionContent{
+
+    padding:0;
+
+}
+
+.attractionContent h3{
+
+    position: absolute;
+    color:var(--text);
+
+    font-size:1.25rem;
+    z-index: 20;
+    bottom: 0;
+    padding: 1rem;
+    
+
+}
+
+@media(max-width:768px){
+
+
+    .attractionImage{
+
+        height:190px;
+
+    }
+
+}

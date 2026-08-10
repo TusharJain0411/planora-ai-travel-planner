@@ -1,0 +1,15 @@
+.exploreTripPage{
+
+    width:min(1400px,95%);
+
+    margin:0px auto;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+@media (max-width:576px) {
+   
+}

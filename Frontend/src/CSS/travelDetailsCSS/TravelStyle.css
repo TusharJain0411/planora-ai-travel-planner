@@ -1,0 +1,441 @@
+:root{
+    --card:#1a2235;
+    --card2:#252e45;
+    --border:#394562;
+
+    --primary:#6C5CE7;
+    --secondary:#00C2FF;
+
+    --text:#ffffff;
+    --muted:#97aecd;
+}
+
+/*==================================
+            SECTION
+===================================*/
+
+.travel-style-section{
+    width:90%;
+    margin:30px auto;
+    padding:28px;
+
+    background:#1a2235;
+    border:1px solid #313b56;
+
+    border-radius:24px;
+}
+
+.light-travel-style{
+    background:#fff;
+    border:none;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.12);
+}
+
+/*==================================
+            HEADER
+===================================*/
+
+.style-header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    
+
+    margin-bottom:30px;
+}
+
+.style-icon{
+    width:30px;
+    height:30px;
+
+    border-radius:12px;
+
+    background:rgba(108,92,231,.15);
+    border:2px solid rgba(108,92,231,.45);
+    color:#6C5CE7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+   
+    font-size:16px;
+}
+
+.style-header h2{
+    color:white;
+    font-size:22px;
+    margin-bottom:4px;
+}
+
+.style-header p{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.light-travel-style .style-header h2{
+    color:#1a2235;
+}
+
+.light-travel-style .style-header p{
+    color:#64748b;
+}
+
+/*==================================
+        SUB HEADING
+===================================*/
+
+.sub-heading{
+    color:white;
+    font-size:18px;
+    margin:28px 0 18px;
+}
+
+.light-travel-style .sub-heading{
+    color:#1a2235;
+}
+
+/*==================================
+        STYLE GRID
+===================================*/
+
+.style-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:5px;
+
+}
+
+/*==================================
+        STYLE CARD
+===================================*/
+
+.style-card{
+
+    background:#252e45;
+
+    border:2px solid transparent;
+
+    border-radius:18px;
+
+    padding:15px 20px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    display:flex;
+    
+    align-items:center;
+    justify-content:center;
+
+    gap:16px;
+
+}
+
+.style-card:hover{
+
+    transform:translateY(-6px);
+
+
+
+    box-shadow:0 12px 28px rgba(108,92,231,.18);
+
+}
+
+
+.style-card.active-Solo{
+    border:2px solid #3B82F6;
+    background:rgba(59,130,246,.15);
+    color:#3B82F6;
+    box-shadow:0 0 20px rgba(59,130,246,.35);
+}
+
+.style-card.active-Solo .style-card-icon{
+    color:#3B82F6;
+}
+
+
+.style-card.active-Couple{
+    border:2px solid #EC4899;
+    background:rgba(236,72,153,.15);
+    color:#EC4899;
+    box-shadow:0 0 20px rgba(236,72,153,.35);
+}
+
+.style-card.active-Couple .style-card-icon{
+    color:#EC4899;
+}
+
+
+.style-card.active-Family{
+    border:2px solid #10B981;
+    background:rgba(16,185,129,.15);
+    color:#10B981;
+    box-shadow:0 0 20px rgba(16,185,129,.35);
+}
+
+.style-card.active-Family .style-card-icon{
+    color:#10B981;
+}
+
+
+.style-card.active-Friends{
+    border:2px solid #F59E0B;
+    background:rgba(245,158,11,.15);
+    color:#F59E0B;
+    box-shadow:0 0 20px rgba(245,158,11,.35);
+}
+
+.style-card.active-Friends .style-card-icon{
+    color:#F59E0B;
+}
+
+
+.style-card.active-Backpacking{
+    border:2px solid #46268d;
+    background:rgba(139,92,246,.15);
+    color:#6940c1;
+    box-shadow:0 0 20px rgba(139,92,246,.35);
+}
+
+.style-card.active-Backpacking .style-card-icon{
+    color:#6439c1;
+}
+
+
+.style-card.active-Adventure{
+    border:2px solid #EF4444;
+    background:rgba(239,68,68,.15);
+    color:#EF4444;
+    box-shadow:0 0 20px rgba(239,68,68,.35);
+}
+
+.style-card.active-Adventure .style-card-icon{
+    color:#EF4444;
+}
+
+.light-travel-style .style-card{
+
+    background:#eef9ff;
+
+}
+
+
+
+/*==================================
+        ICON
+===================================*/
+
+.style-card-icon{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:rgba(108,92,231,.12);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#6C5CE7;
+
+    font-size:20px;
+
+}
+
+.style-card span{
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+.light-travel-style .style-card span{
+
+    color:#1a2235;
+
+}
+
+/*==================================
+        INTEREST GRID
+===================================*/
+
+.interest-grid{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+/*==================================
+        CHIP
+===================================*/
+
+.interest-chip{
+
+    border:none;
+
+    background:#252e45;
+
+    color:white;
+
+    border-radius:40px;
+
+    padding:12px 18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:15px;
+
+}
+
+.light-travel-style .interest-chip{
+
+    background:#eef9ff;
+
+    color:#1a2235;
+
+}
+
+.interest-chip:hover{
+
+    transform:translateY(-3px);
+
+    background:#343fa0;
+    color: white;
+
+}
+
+.active-chip{
+
+    background:linear-gradient(135deg,#6C5CE7,#00C2FF);
+
+    color:white;
+
+    box-shadow:0 10px 20px rgba(108,92,231,.35);
+
+}
+
+.light-travel-style .active-chip{
+    background-color: #d6f1ff;
+}
+
+.interest-chip svg{
+
+    font-size:18px;
+
+}
+
+
+
+/*==================================
+        RESPONSIVE
+===================================*/
+
+@media(max-width:992px){
+
+
+    .style-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+    .interest-grid{
+        gap: 10px;
+    }
+    .interest-chip{
+        padding: 12px 15px;
+    }
+    .interest-chip svg{
+        font-size: 15px;
+    }
+}
+@media (max-width:850px) {
+     .interest-grid{
+        gap: 8px;
+    }
+      .interest-chip{
+        padding: 12px 12px;
+    }
+    .interest-chip{
+        font-size: 12px;
+    }
+}
+@media(max-width:768px){
+
+
+   
+
+}
+
+@media(max-width:576px){
+
+    .travel-style-section{
+
+      
+
+        padding:18px;
+
+    }
+
+    .style-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .style-card{
+
+        padding:10px 8px;
+        justify-content: flex-start;
+
+    }
+
+    .style-card-icon{
+
+        width:40px;
+        height:40px;
+
+        font-size:20px;
+
+    }
+
+    .interest-grid{
+
+        gap:8px;
+
+    }
+
+    .interest-chip{
+
+        
+
+        justify-content:center;
+
+    }
+    .interest-chip svg{
+        font-size: 12px;
+    }
+    .interest-chip span{
+        font-size: 12px;
+    }
+
+}

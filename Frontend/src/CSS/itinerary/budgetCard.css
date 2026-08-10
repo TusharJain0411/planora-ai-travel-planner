@@ -1,0 +1,264 @@
+.budgetCard{
+
+ background-color: transparent;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:22px;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+.light-budgetCard{
+ background:#ffffff;
+border: none;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+
+
+.budgetCard::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-40px;
+
+    right:-40px;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:rgba(108,92,231,.08);
+
+}
+.budgetCard::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-40px;
+
+    right:-40px;
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    background:rgba(134, 120, 236, 0.06);
+    z-index: 1;
+
+}
+.light-budgetCard::before{
+    background:rgba(137, 125, 233, 0.06);
+}
+
+.light-budgetCard::after{
+   background:rgba(162, 152, 235, 0.09); 
+}
+
+
+.budgetCard:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(108,92,231,.35);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.18);
+
+}
+
+/* ================= Top ================= */
+
+.budgetCardTop{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:16px;
+
+}
+
+.budgetIcon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.8rem;
+
+    background:rgba(108,92,231,.12);
+
+}
+
+.budgetInfo{
+
+    flex:1;
+    
+
+}
+
+.budgetInfo h3{
+
+    color:var(--text);
+
+    font-size:1.1rem;
+
+    margin-bottom:5px;
+
+}
+
+.budgetInfo p{
+
+    color:var(--text-secondary);
+
+    font-size:.85rem;
+
+}
+
+.budgetCardTop h2{
+
+    color:var(--primary);
+
+    font-size:1.35rem;
+
+    font-weight:700;
+
+}
+
+/* ================= Progress ================= */
+
+.budgetProgress{
+
+    margin-top:22px;
+
+    height:10px;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.light-budgetCard .budgetProgress{
+     background:rgba(137, 125, 233, 0.09);
+}
+
+.budgetFill{
+
+    height:100%;
+
+    border-radius:50px;
+
+    transition:width .8s ease;
+
+}
+
+/* ================= Light Theme ================= */
+
+.lightBudget .budgetCard{
+
+    background:#fff;
+
+    border-color:#dce5ef;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.lightBudget .budgetProgress{
+
+    background:#edf2f7;
+
+}
+
+.lightBudget .budgetInfo h3{
+
+    color:#252e45;
+
+}
+
+.lightBudget .budgetInfo p{
+
+    color:#667085;
+
+}
+
+/* ================= Responsive ================= */
+
+
+
+@media(max-width:768px){
+
+    .budgetCard{
+
+        padding:18px;
+     
+    }
+
+    .budgetIcon{
+
+        width:50px;
+
+        height:50px;
+
+        font-size:1.5rem;
+
+    }
+     .budgetCardTop{
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+     }
+    .budgetCardTop h2{
+
+        font-size:1.1rem;
+        flex: 1;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .budgetCardTop{
+
+
+    }
+
+    .budgetCardTop h2{
+
+        width:100%;
+
+        margin-top:8px;
+
+        text-align:right;
+
+    }
+
+}

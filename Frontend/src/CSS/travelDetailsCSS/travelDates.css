@@ -1,0 +1,307 @@
+
+:root{--glass:rgba(255,255,255,.08);
+
+--bg:#0b1120;
+
+--card:#151d2f;
+
+--card2:#1b2438;
+
+--border:#2b3552;
+
+--primary:#6C5CE7;
+
+--secondary:#00C2FF;
+
+--text:#ffffff;
+
+--muted:#9ca3af;
+
+--radius:18px;
+
+  --blue:#3B82F6;
+    --text-light:#F8FAFC;
+    --text:#3B82F6;
+    --muted-light:#B4C2D6;
+    --muted:#97aecd;}
+
+.travel-dates{
+
+    width:90%;
+    margin:auto;
+    background:#1a2235;
+    border:1px solid #313b56;
+    border-radius:24px;
+    padding:28px;
+    margin-bottom:30px;
+
+}
+.light-travel-date{
+     background:white !important;
+border: none !important;
+  
+    box-shadow:
+    0 10px 35px rgba(29, 28, 28, 0.25);
+}
+.travel-header2{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:16px;
+
+}
+
+.travel-icon{
+
+    width:30px;
+    height:30px;
+    border-radius:12px;
+   background:rgba(108,92,231,.15);
+    border:2px solid rgba(108,92,231,.45);
+    color:#6C5CE7;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:16px;
+
+}
+
+.travel-header2 h2{
+
+    color:white;
+    font-size:22px;
+
+}
+.light-travel-date .travel-header2 h2{
+    color: var(--card);
+}
+
+.travel-content{
+
+    display:grid;
+    grid-template-columns:1.3fr .9fr;
+    gap:24px;
+
+}
+
+.calendar-container{
+
+    min-height:420px;
+    border-radius:18px;
+
+}
+
+.calendar-placeholder{
+
+    height:100%;
+    border-radius:18px;
+    border:1px dashed #4b5674;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#7d8cab;
+
+}
+
+.travel-info{
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+}
+
+.info-card{
+
+    background:#252e45;
+    border:1px solid #394562;
+
+    border-radius:18px;
+
+    padding:15px;
+
+}
+
+.info-card span{
+
+    color:#9ca3af;
+    font-size:14px;
+
+}
+
+.info-card h3{
+
+    margin-top:8px;
+    color:white;
+    font-size:20px;
+
+}
+
+.info-card small{
+
+    color:#06b6d4;
+}
+
+.light-travel-date .info-card{
+    background: #eef9ff;
+    border: none;
+}
+
+.light-travel-date .info-card h3{
+    color: var(--card);
+}
+
+
+
+.toggle-card{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+/* ==========================
+   Tablet (768px)
+========================== */
+
+@media (max-width:768px){
+
+    .travel-dates{
+        width:95%;
+        padding:20px;
+        border-radius:20px;
+    }
+
+    .travel-header2 h2{
+        font-size:20px;
+    }
+
+    .travel-icon{
+        width:28px;
+        height:28px;
+        font-size:14px;
+    }
+
+    .travel-info{
+        grid-template-columns:1fr;
+    }
+
+    .info-card{
+        padding:16px;
+    }
+
+    .info-card h3{
+        font-size:18px;
+    }
+
+    .toggle-card{
+        flex-direction:row;
+    }
+
+}
+
+
+/* ==========================
+   Mobile (576px)
+========================== */
+
+@media (max-width:576px){
+
+
+    .travel-dates{
+        width:90%;
+        padding:16px;
+        border-radius:18px;
+      padding-bottom: 15px;
+    }
+
+    .travel-header2{
+        gap:10px;
+        margin-bottom:18px;
+    }
+
+    .travel-header2 h2{
+        font-size:18px;
+    }
+
+    .travel-icon{
+        width:26px;
+        height:26px;
+        border-radius:8px;
+        font-size:13px;
+    }
+
+    .travel-content{
+        gap:18px;
+    }
+
+    .info-card{
+        padding:14px;
+        border-radius:14px;
+    }
+
+    .info-card h3{
+        font-size:16px;
+    }
+
+    .info-card span{
+        font-size:13px;
+    }
+
+    .info-card small{
+        font-size:12px;
+    }
+
+    .toggle-card{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+    }
+
+    .toggle-card .switch{
+        align-self:flex-end;
+    }
+
+    .calendar-container{
+        min-height: 38px;
+    }
+
+}
+
+
+/* ==========================
+   Small Phones (400px)
+========================== */
+
+@media (max-width:400px){
+
+    .travel-dates{
+        width:98%;
+        padding:14px;
+    }
+
+    .travel-header2 h2{
+        font-size:16px;
+    }
+
+    .info-card{
+        padding:12px;
+    }
+
+    .info-card h3{
+        font-size:15px;
+    }
+
+    .info-card span,
+    .info-card small{
+        font-size:11px;
+    }
+
+}

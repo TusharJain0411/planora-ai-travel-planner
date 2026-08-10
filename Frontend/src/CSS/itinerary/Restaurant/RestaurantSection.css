@@ -1,0 +1,106 @@
+.restaurantSection {
+    width: 95%;
+    margin: 40px auto;
+    background-color: transparent !important;
+
+}
+
+.restaurantHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.restaurantHeader h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #fff !important;
+    font-weight: 700;
+}
+
+.light-restaurantSection .restaurantHeader h2 {
+    color: #252e45 !important;
+}
+
+.restaurantHeader p {
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.restaurantSlider {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+
+}
+
+.restaurantGrid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+overflow-y: visible;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+
+    /* Prevent cards from shrinking */
+    align-items: stretch;
+}
+
+.restaurantGrid::-webkit-scrollbar {
+    display: none;
+}
+
+.restaurantScrollButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    background: rgba(20, 20, 20, 0.85);
+    color: white;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.2s ease;
+}
+
+.restaurantScrollButton:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.restaurantScrollButton svg {
+    width: 22px;
+    height: 22px;
+}
+
+.restaurantScrollButtonLeft {
+    left:-10px;
+}
+
+.restaurantScrollButtonRight {
+    right: -10px;
+}
+
+.restaurant-card {
+    flex: 0 0 280px;
+    width: 280px;
+    max-width: 280px;
+    scroll-snap-align: center;
+   
+}

@@ -1,0 +1,350 @@
+:root{
+    --bg:#0b1120;
+    --card:#1a2235;
+    --card2:#252e45;
+    --border:#394562;
+
+    --primary:#6C5CE7;
+    --secondary:#00C2FF;
+
+    --text:#ffffff;
+    --muted:#97aecd;
+}
+
+/*==========================
+    SECTION
+==========================*/
+
+.travelers-section{
+    width:90%;
+    margin:30px auto;
+    padding:28px;
+
+    background:#1a2235;
+    border:1px solid #313b56;
+
+    border-radius:24px;
+}
+
+.light-travelers-section{
+    background:white;
+    border:none;
+    box-shadow:0 12px 35px rgba(0,0,0,.15);
+}
+
+/*==========================
+      HEADER
+==========================*/
+
+.travelers-heading{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    margin-bottom:14px;
+}
+
+.travelers-icon{
+    width:30px;
+    height:30px;
+
+    border-radius:12px;
+
+   background:rgba(108,92,231,.15);
+    border:2px solid rgba(108,92,231,.45);
+    color:#6C5CE7;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:16px;
+}
+
+.travelers-heading h2{
+    color:white;
+    font-size:22px;
+    font-weight:700;
+}
+
+.light-travelers-section .travelers-heading h2{
+    color:#1a2235;
+}
+
+/*==========================
+      GRID
+==========================*/
+
+.travelers-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+/*==========================
+      CARD
+==========================*/
+
+.traveler-card{
+
+    background:#2a3247;
+    border:2px solid rgba(255,255,255,.08);
+
+    border-radius:26px;
+
+    padding:15px 15px;
+
+    text-align:center;
+
+    transition:.35s;
+    display: flex;
+   flex-direction: column;
+
+}
+
+.traveler-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#6C5CE7;
+
+    box-shadow:0 15px 35px rgba(108,92,231,.2);
+
+}
+
+.light-travelers-section .traveler-card{
+
+    background:#eef9ff;
+    border:none;
+
+}
+
+/*==========================
+      ICON
+==========================*/
+
+.traveler-circle{
+
+    width:45px;
+    height:45px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:rgba(108,92,231,.15);
+
+    border:2px solid rgba(108,92,231,.35);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#5b4df5;
+    font-size:16px;
+
+    margin-bottom:16px;
+
+}
+
+/*==========================
+      TEXT
+==========================*/
+
+.traveler-card h3{
+
+    color:white;
+
+    font-size:18px;
+
+    
+
+}
+
+.traveler-card p{
+
+    color:#b5bfd7;
+
+    font-size:12px;
+
+    margin-bottom:16px;
+
+}
+
+.light-travelers-section .traveler-card h3{
+
+    color:#1a2235;
+
+}
+
+.light-travelers-section .traveler-card p{
+
+    color:#64748b;
+
+}
+
+/*==========================
+      COUNTER
+==========================*/
+
+.counter{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.counter span{
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    min-width:40px;
+
+}
+
+.light-travelers-section .counter span{
+
+    color:#1a2235;
+
+}
+
+/*==========================
+      BUTTONS
+==========================*/
+
+.counter button{
+
+    width:30px;
+    height:30px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:16px;
+
+}
+
+.counter button:first-child{
+
+    background:#434b61;
+
+    color:white;
+
+}
+
+.counter button:last-child{
+
+    background:linear-gradient(135deg,#6C5CE7,#5147ef);
+
+    color:white;
+
+    box-shadow:0 0 25px rgba(108,92,231,.45);
+
+}
+
+.counter button:hover{
+
+    transform:scale(1.08);
+
+}
+
+.counter button:active{
+
+    transform:scale(.95);
+
+}
+
+.counter button:disabled{
+
+    opacity:.4;
+
+    cursor:not-allowed;
+
+}
+
+/*==========================
+      RESPONSIVE
+==========================*/
+
+@media(max-width:1200px){
+
+    .travelers-grid{
+
+        grid-template-columns:repeat(4,1fr);
+
+    }
+
+}
+@media (max-width:900px) {
+    .travelers-grid{
+
+    
+gap:12px;
+    }
+     .traveler-circle{
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    .traveler-card h3{
+        font-size: 16px;
+    }
+    .traveler-card p{
+        font-size: 10px;
+    }
+    .counter button{
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+}
+
+@media(max-width:768px){
+
+    .travelers-section{
+
+        width:95%;
+        padding:22px;
+
+    }
+
+    .travelers-grid{
+
+         grid-template-columns:repeat(2,1fr);
+gap:12px;
+    }
+
+    .traveler-card{
+
+        padding:20px 18px;
+      gap: 0.02rem;
+    }
+   
+
+}
+
+@media (max-width:576px) {
+    .travelers-section{
+        width: 90%;
+        padding: 15px;
+       
+    }
+}

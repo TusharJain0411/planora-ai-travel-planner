@@ -1,0 +1,296 @@
+
+:root{--glass:rgba(255,255,255,.08);
+
+--bg:#0b1120;
+
+--card:#151d2f;
+
+--card2:#1b2438;
+
+--border:#2b3552;
+
+--primary:#6C5CE7;
+
+--secondary:#00C2FF;
+
+--text:#ffffff;
+
+--muted:#9ca3af;
+
+--radius:18px;
+
+  --blue:#3B82F6;
+    --text-light:#F8FAFC;
+    --text:#3B82F6;
+    --muted-light:#B4C2D6;
+    --muted:#97aecd;}
+
+
+.calendar{
+
+    width:100%;
+
+}
+
+.calendar-top{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.calendar-top h3{
+
+    color:white;
+    font-size:20px;
+
+}
+
+.calendar-top button{
+
+    width:35px;
+    height:35px;
+
+    border:none;
+
+    background:#252e45;
+
+    border-radius:12px;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.calendar-top button:hover{
+
+    background:#6C5CE7;
+
+}
+.light-calendar .calendar-top button{
+    background-color: #eef9ff;
+    color: var(--card);
+}
+.light-calendar .calendar-top button:hover{
+     background:#6C5CE7;
+}
+
+.light-calendar .calendar-top h3{
+    color: var(--card);
+}
+.week-row{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    margin-bottom:15px;
+
+}
+
+.week-row span{
+
+    text-align:center;
+
+    color:#98a4c3;
+
+    font-size:14px;
+
+}
+
+.date-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:10px;
+
+}
+
+.date-cell{
+
+    height:48px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.date-cell:hover{
+
+    background:#343fa0;
+    
+
+}
+.light-calendar .date-cell{
+    color: var(--card);
+}
+
+.light-calendar .date-cell:hover{
+
+    background:#343fa0;
+    color: white !important;
+
+}
+
+.empty{
+
+    visibility:hidden;
+
+}
+
+
+.date-cell.start,
+.date-cell.end{
+
+    background:#6C5CE7;
+    color:white;
+    font-weight:700;
+    box-shadow:0 0 15px rgba(108,92,231,.45);
+
+}
+
+.date-cell.between{
+
+    background:#3b3486;
+    color:white;
+
+}
+
+.light-calendar .date-cell.between{
+    background:#a09adc;
+    color:white;
+}
+
+
+
+/* ===========================
+   Tablet (768px)
+=========================== */
+
+@media (max-width:768px){
+
+    .calendar-top{
+        margin-bottom:20px;
+    }
+
+    .calendar-top h3{
+        font-size:17px;
+    }
+
+    .calendar-top button{
+        width:32px;
+        height:32px;
+        border-radius:10px;
+    }
+
+    .week-row{
+        margin-bottom:10px;
+    }
+
+    .week-row span{
+        font-size:12px;
+    }
+
+    .date-grid{
+        gap:6px;
+    }
+
+    .date-cell{
+        height:40px;
+        border-radius:10px;
+        font-size:13px;
+    }
+
+}
+
+
+
+/* ===========================
+   Mobile (576px)
+=========================== */
+
+@media (max-width:576px){
+
+    .calendar-top{
+        margin-bottom:18px;
+    }
+
+    .calendar-top h3{
+        font-size:16px;
+    }
+
+    .calendar-top button{
+        width:30px;
+        height:30px;
+        border-radius:8px;
+        font-size:12px;
+    }
+
+    .week-row span{
+        font-size:11px;
+    }
+
+    .date-grid{
+        gap:4px;
+    }
+
+    .date-cell{
+        height:34px;
+        font-size:12px;
+        border-radius:8px;
+    }
+
+}
+
+
+/* ===========================
+   Small Phones (400px)
+=========================== */
+
+@media (max-width:400px){
+
+    .calendar-top h3{
+        font-size:14px;
+    }
+
+    .calendar-top button{
+        width:28px;
+        height:28px;
+        font-size:11px;
+    }
+
+    .week-row span{
+        font-size:10px;
+    }
+
+    .date-grid{
+        gap:3px;
+    }
+
+    .date-cell{
+        height:30px;
+        font-size:11px;
+        border-radius:6px;
+    }
+
+}

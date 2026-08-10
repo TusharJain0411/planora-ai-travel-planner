@@ -1,0 +1,500 @@
+
+
+/* ===========================
+   LOGIN CARD
+=========================== */
+
+.login-card,.register-card{
+
+    width:470px;
+
+    background:rgba(20,28,43,.95);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    padding:20px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.45);
+
+}
+
+/* ===========================
+LOGO
+=========================== */
+
+.login-logo,.register-logo{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:20px;
+
+}
+
+.logo-circle,.register-circle{
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    #3fd8ff,
+    #4264ff);
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+.login-logo h2 ,.register-logo h2{
+
+    color:white;
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+/* ===========================
+HEADING
+=========================== */
+
+.login-heading,.register-heading{
+
+    margin-bottom:15px;
+
+}
+
+.login-heading h1,.register-heading h1{
+
+    color:white;
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+}
+
+.login-heading p,.register-heading p{
+
+    color:#a8b4c8;
+
+    font-size:14px;
+
+}
+
+/* ===========================
+FORM
+=========================== */
+
+.login-form,.register-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+
+
+
+.input-box{
+
+    width:100%;
+
+   font-size: 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:12px 22px;
+
+    border-radius:35px;
+
+    background:#2a3448;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.input-box:hover{
+
+    border-color:#41d4ff;
+
+}
+
+.input-box:focus-within{
+
+    border-color:#41d4ff;
+
+    box-shadow:
+    0 0 0 3px rgba(65,212,255,.15);
+
+}
+
+.input-box > svg{
+    color:#95a4ba;
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.eye-btn svg{
+    color:#9fb0c9;
+    font-size:18px;
+    display:block;
+}
+
+.input-box input{
+
+    flex:1;
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+.input-box input::placeholder{
+
+    color:#92a2b9;
+
+}
+
+
+
+.eye-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    color: #9fb0c9;
+    cursor: pointer;
+    
+}
+
+.login-eye-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px !important;
+    height: 20px;
+
+    padding: 0;
+    margin: 0;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.login-eye-btn svg{
+    font-size: 18px;
+    display: block;
+    color: #9fb0c9;
+}
+
+.form-options{
+
+    display:flex;
+
+    justify-content:end;
+
+    align-items:end;
+
+}
+
+
+
+.form-options a{
+
+    color:#38d3ff;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+}
+
+.form-options a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ===========================
+BUTTON
+=========================== */
+
+.signin-btn,.register-btn{
+
+    width:100%;
+
+    padding: 10px 0;
+
+    border:none;
+
+    border-radius:35px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+    135deg,
+    #44d9ff,
+    #4258ff);
+
+    transition:.35s;
+
+    box-shadow:
+    0 15px 30px rgba(68,217,255,.25);
+
+}
+
+.signin-btn:hover,.register-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 20px 40px rgba(68,217,255,.35);
+
+}
+
+/* ===========================
+DIVIDER
+=========================== */
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.divider::before,
+
+.divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.divider span{
+
+    margin:0 15px;
+
+    color:#8fa2bd;
+
+    font-size:14px;
+
+}
+
+/* ===========================
+SOCIAL
+=========================== */
+
+.social-btn{
+
+    width:100%;
+
+   
+
+    border-radius:35px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:#2a3448;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+padding: 10px 0;
+}
+
+.social-btn:hover{
+
+    background:#36435b;
+
+    transform:translateY(-2px);
+
+}
+
+.social-btn svg{
+
+    font-size:21px;
+
+}
+
+/* ===========================
+REGISTER
+=========================== */
+
+.register-link,.login-link{
+
+    text-align:center;
+
+    color:#aeb8ca;
+
+    font-size:16px;
+
+}
+
+.register-link a,.login-link a{
+
+    color:#41d4ff;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+}
+
+.register-link a:hover, .login-link a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:600px){
+
+.login-card,.register-card{
+
+width:95%;
+
+padding:25px;
+position: relative;
+}
+
+.login-heading h1, .register-heading h1{
+
+font-size:32px;
+
+}
+
+.login-heading p,.register-heading p{
+
+font-size:15px;
+
+}
+
+.signin-btn,.register-btn{
+
+padding: 14px;
+
+font-size:18px;
+
+}
+
+.social-btn{
+padding: 14px;
+
+font-size:15px;
+
+}
+
+.input-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.login-eye-btn,
+.eye-btn{
+    position:static;
+    margin-left:auto;
+}
+
+.input-box input{
+    flex:1;
+    width:100%;
+    min-width:0;
+    padding-right:8px;
+}
+}

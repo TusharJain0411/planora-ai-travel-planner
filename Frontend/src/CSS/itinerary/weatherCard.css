@@ -1,0 +1,248 @@
+.weatherCard{
+
+    min-width:250px;
+
+    width:250px;
+
+    flex-shrink:0;
+
+    scroll-snap-align:start;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:22px 18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.weatherCard::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50px;
+
+    right:-50px;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:rgba(108,92,231,.08);
+
+    filter:blur(15px);
+
+}
+
+.weatherCard:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(108,92,231,.35);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.18);
+
+}
+
+/* ================= Light Theme ================= */
+
+.lightWeatherCard{
+
+    background:#ffffff;
+
+    border-color:#dce5ef;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+
+}
+
+/* ================= Day ================= */
+
+.weatherDay{
+
+    color:var(--text);
+
+    font-size:1rem;
+
+    font-weight:700;
+
+}
+
+.lightWeatherCard .weatherDay{
+
+    color:#252e45;
+
+}
+
+.weatherDate{
+
+
+    color:var(--text-secondary);
+
+    font-size:.82rem;
+
+}
+
+/* ================= Icon ================= */
+
+.weatherIcon{
+
+    font-size:2rem;
+
+    margin:18px 0 0;
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/* ================= Temperature ================= */
+
+.weatherCard h2{
+
+    color:var(--primary);
+
+    font-size:1rem;
+
+    font-weight:700;
+
+}
+
+.weatherCondition{
+
+
+    color:var(--text-secondary);
+
+    font-size:.8rem;
+
+   
+
+}
+
+/* ================= Bottom ================= */
+
+.weatherInfo{
+
+    
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+}
+
+.weatherInfo div{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content: center;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px;
+
+    border-radius:14px;
+
+    background:rgba(108,92,231,.08);
+
+}
+
+.lightWeatherCard .weatherInfo div{
+
+    background:#eef3ff;
+
+}
+
+.weatherInfo svg{
+
+    color:var(--primary);
+
+    font-size:1rem;
+
+}
+
+.weatherInfo span{
+
+    color:var(--text);
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+}
+
+.lightWeatherCard .weatherInfo span{
+
+    color:#252e45;
+
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:992px){
+
+    .weatherCard{
+
+        min-width:240px;
+
+        scroll-snap-align:center;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .weatherCard{
+
+        min-width:220px;
+
+        padding:20px 16px;
+
+    }
+
+}
+

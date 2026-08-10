@@ -1,0 +1,72 @@
+:root{
+
+--bg:#0b1120;
+
+--card:#151d2f;
+
+--card2:#1b2438;
+
+--border:#2b3552;
+
+--primary:#6C5CE7;
+
+--secondary:#00C2FF;
+
+--primary2:#6c5ce798;
+
+--secondary2:#00c3ffa4;
+
+--text:#ffffff;
+
+--muted:#9ca3af;
+
+--radius:18px;
+
+}
+
+
+.travel-detail-page{
+   
+    padding-top:13rem ;
+   padding-bottom: 1rem;
+    display: block;
+    width: 100%;
+}
+
+.GenerateItinaryBtn{
+    width: 40%;
+    margin:1rem auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:1rem;
+    border-radius: 12px;
+    gap: 0.5rem;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    background: linear-gradient(130deg,var(--primary),var(--primary),var(--secondary),lightblue);
+    border: none;
+    box-shadow: 0 0 10px rgb(210, 160, 233);
+    
+}
+
+.GenerateItinaryBtn:hover{
+    scale: 1.02;
+}
+
+.dark-generate-btn{
+    box-shadow: 0 0 10px rgb(125, 81, 146);
+}
+.GenerateItinaryBtn:disabled{
+    background: linear-gradient(130deg,var(--primary2),var(--primary2),var(--secondary2),rgba(173, 216, 230, 0.658));
+}
+.GenerateItinaryBtn:disabled:hover{
+    scale: 1;
+}
+@media (max-width:576px) {
+ .travel-detail-page{
+    padding-top: 11rem;
+ }
+ .GenerateItinaryBtn{width:90%;}
+}

@@ -1,0 +1,416 @@
+
+
+
+
+.login-register-page{
+
+    width:100%;
+   min-height: 90vh;
+
+    display:grid;
+    grid-template-columns:58% 42%;
+
+    
+}
+
+/*======================
+LEFT SECTION
+======================*/
+
+.login-register-left{
+
+    position:relative;
+    overflow:hidden;
+
+    background:url("../assets/login_register_poster.png");
+    background-size:cover;
+    background-position:center;
+}
+
+.overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    rgba(22,20,60,.45),
+    rgba(14,16,42,.55)
+    );
+
+    backdrop-filter:blur(1px);
+}
+
+.left-content{
+
+    position:relative;
+    z-index:2;
+
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    padding:70px;
+}
+
+.left-content h1{
+
+    color:#fff;
+
+    font-size:72px;
+
+    line-height:1.05;
+
+    font-weight:800;
+
+    max-width:520px;
+}
+
+.left-content p{
+
+    margin-top:35px;
+
+    color:rgba(255,255,255,.85);
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    max-width:650px;
+}
+
+
+/*======================
+RIGHT SECTION
+======================*/
+
+.login-register-right{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+position: relative;
+    padding:50px;
+
+    background:
+    radial-gradient(circle at top,#18244a,#0b1120);
+}
+
+
+.login-card{
+
+    width:520px;
+
+    background:#1b2537;
+
+    border-radius:24px;
+
+    padding:45px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.45);
+}
+
+/*======================
+LOGO
+======================*/
+
+.login-logo{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin-bottom:40px;
+}
+
+.logo-circle{
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(135deg,#5b67ff,#8d3cff);
+
+    color:white;
+
+    font-size:22px;
+}
+
+.login-logo h2{
+
+    color:white;
+
+    font-size:34px;
+
+    font-weight:700;
+}
+
+/*======================
+HEADING
+======================*/
+
+.login-heading h1{
+
+    color:white;
+
+    font-size:48px;
+
+    margin-bottom:10px;
+}
+
+.login-heading p{
+
+    color:#b9c0cf;
+
+    font-size:22px;
+
+    margin-bottom:35px;
+}
+
+
+
+body{
+    background:#09111d;
+}
+
+.login-page{
+
+    width:100%;
+    min-height:100vh;
+
+    display:grid;
+    grid-template-columns:58% 42%;
+
+    background:#09111d;
+}
+
+/*======================
+LEFT SECTION
+======================*/
+
+.login-left{
+
+    position:relative;
+    overflow:hidden;
+
+    background:url("../assets/login_register_poster.png");
+    background-size:cover;
+    background-position:center;
+}
+
+.overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    rgba(22,20,60,.45),
+    rgba(14,16,42,.55)
+    );
+
+    backdrop-filter:blur(1px);
+}
+
+.left-content{
+
+    position:fixed;
+    z-index:2;
+
+    height:100%;
+bottom: -5rem;
+left: 1rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    padding:70px;
+}
+
+.left-content h1{
+
+    color:#fff;
+
+    font-size:40px;
+
+    line-height:1.05;
+
+    font-weight:800;
+
+    max-width:520px;
+}
+
+.left-content p{
+
+    margin-top:35px;
+
+    color:rgba(255,255,255,.85);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:650px;
+}
+
+
+
+
+
+/*======================
+RIGHT SECTION
+======================*/
+
+.login-right{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:50px;
+
+    background:
+    radial-gradient(circle at top,#18244a,#0b1120);
+    position:relative;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+
+.close-btn{
+    position:absolute;
+    top: 5px;
+    right: 5px;
+    width:40px;
+    height:40px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn:hover{
+    background:#ef4444;
+}
+
+
+
+@media (max-width:900px) {
+    .login-register-left{
+        display: none;
+    }
+    .login-register-right{
+        border-radius: 20px;
+        padding: 3rem 5rem;
+        margin: auto;
+    }
+
+    .login-register-page{margin: auto;
+    grid-template-columns: 100%;}
+}
+
+
+@media (max-width:500px){
+
+    .login-register-page{
+
+        grid-template-columns:100%;
+      
+    }
+
+    .login-register-left{
+        display:none;
+    }
+
+    .login-register-right{
+        padding:20px 15px;
+        align-items:center;
+        width: 100%;
+    }
+
+    .login-card{
+        width:100%;
+        padding:25px 20px;
+        border-radius:18px;
+    }
+
+    /* Logo */
+
+    .login-logo{
+        margin-bottom:25px;
+        gap:10px;
+    }
+
+    .logo-circle{
+        width:45px;
+        height:45px;
+        font-size:18px;
+    }
+
+    .login-logo h2{
+        font-size:28px;
+    }
+
+    /* Heading */
+
+    .login-heading h1{
+        font-size:32px;
+        margin-bottom:8px;
+    }
+
+    .login-heading p{
+        font-size:16px;
+        margin-bottom:25px;
+        line-height:1.5;
+    }
+
+    /* Buttons & Inputs */
+
+    .login-card input,
+    .login-card select,
+    .login-card textarea{
+        font-size:15px;
+    }
+
+    .login-card button{
+        width:100%;
+    }
+
+    /* Close Button */
+
+    .close-btn{
+        width:35px;
+        height:35px;
+        font-size:16px;
+        top:10px;
+        right:10px;
+        z-index: 100;
+    }
+}

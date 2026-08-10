@@ -1,0 +1,396 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 10px;
+  margin-top: 20px;
+}
+.sidebar h2{
+font-weight: 700;
+    color: #fff !important;
+}
+.light-sidebar h2{
+    color: #252e45 !important;
+}
+
+/* ================= Card ================= */
+
+.sidebarCard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 20px;
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.sidebarCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(108,92,231,.3);
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}
+
+/* ================= Light Theme ================= */
+
+.lightSidebarCard {
+    background: #ffffff;
+    border-color: #dbe4f1;
+}
+
+/* ================= Title ================= */
+
+.sidebarTitle {
+    font-size: 2rem;
+    color: var(--text);
+    font-weight: 700;
+
+}
+
+.light-sidebar .sidebarTitle{
+    color: var(--card) !important;
+}
+
+/* ================= Trip Info ================= */
+
+.tripInfo {
+    display: flex;
+gap: 10px;
+
+align-items: center;
+}
+
+.tripInfoItem {
+    padding: 10px 0 5px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    width: 100%;
+}
+
+.lightSidebarCard .tripInfoItem {
+    border-bottom: 1px solid #edf1f7;
+}
+
+.tripInfoItem:last-child {
+    border-bottom: none;
+}
+
+.tripInfoLeft {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+}
+
+/* ================= Icon ================= */
+
+.tripInfoIcon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(108,92,231,.12);
+
+    color: var(--primary);
+
+    font-size: 1rem;
+}
+
+/* ================= Text ================= */
+
+.tripInfoText {
+    display: flex;
+    flex-direction: column;
+}
+
+.tripInfoText span {
+    font-size: .8rem;
+    color: var(--text-secondary);
+}
+
+.light-tripInfoText h5{
+    color:var(--card) !important;
+}
+.tripInfoText h5 {
+  
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.sidebar-lower{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ================= AI Cost Card ================= */
+
+.estimatedCost {
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(108,92,231,.15),
+        rgba(0,212,255,.08)
+    );
+
+    border: 1px solid rgba(108,92,231,.25);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.lightSidebarCard .estimatedCost{
+
+    background:#eef5ff;
+
+    border-color:#d7e5ff;
+
+}
+
+.estimatedCost p{
+
+    color:var(--text-secondary);
+
+    font-size:.95rem;
+
+}
+
+.estimatedCost h2{
+
+    margin:10px 0;
+
+    color:var(--text);
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+}
+
+.light-estimatedCost h2{
+    color: var(--card) !important;
+}
+.estimatedCost span{
+
+    color:#12c57b;
+
+    font-weight:600;
+
+    font-size:.75rem;
+
+}
+
+/* ================= Buttons ================= */
+
+.sidebarButtons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:0.5rem;
+
+}
+
+.sidebarButtons button{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.primaryBtn{
+
+    background:linear-gradient(135deg,#6C5CE7,#8B5CF6);
+
+    color:#fff;
+
+}
+
+.primaryBtn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(108,92,231,.3);
+
+}
+
+
+.secondaryBtn{
+
+    background:rgba(255,255,255,.05);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+}
+
+.lightSidebarCard ~ .sidebarButtons .secondaryBtn{
+
+    background:#fff;
+
+}
+
+.secondaryBtn:hover{
+
+    background:rgba(108,92,231,.1);
+
+}
+
+.light-sidebarButtons .secondaryBtn{
+background-color: rgba(108,92,231,.4) !important;
+}
+.secondaryBtn:hover{
+     box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}
+/* ================= Responsive ================= */
+
+@media (max-width:900px) {
+
+ .sidebar{
+    margin-top: 40px;
+ }
+
+ .sidebarButtons{
+    flex-direction: column;
+    gap: 0.3rem;
+ }
+ .primaryBtn{
+     flex: 1;
+    }
+    .secondaryBtn{
+        flex: 1;
+    }
+    .sidebarCard{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    
+    .sidebar-lower{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 1rem;
+        margin-top: 0.5rem;
+    }
+    
+
+    .estimatedCost{
+        padding: 12px;
+        margin-top:0 ;
+    }
+}
+
+@media(max-width:768px){
+
+    .sidebarCard{
+
+        padding:22px;
+
+    }
+
+    .sidebarTitle{
+
+        font-size:1.45rem;
+
+    }
+    .sidebar-lower{
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebarButtons button{
+         border-radius: 12px;
+         padding: 0.6rem 0 !important;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .tripInfoLeft{
+
+        gap:12px;
+
+    }
+
+    .tripInfoIcon{
+
+        width:40px;
+
+        height:40px;
+
+    }
+
+    .estimatedCost h2{
+
+        font-size:1.7rem;
+
+    }
+    .sidebarButtons{
+        flex-direction: column;
+    }
+    .sidebarCard{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+}
+
+@media(max-width:480px){
+
+    .sidebarCard{
+
+        padding:18px;
+
+    }
+
+    .tripInfoText h5{
+
+        font-size:1rem;
+
+    }
+
+    .sidebarButtons button{
+
+        padding:13px;
+
+    }
+
+}

@@ -1,0 +1,198 @@
+.Home_heroSection {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: #071224;
+}
+
+/* =========================
+   HERO VIDEO
+========================= */
+
+.Home_heroSection .heroVideo {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.Home_heroSection .heroOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(7, 18, 36, 0.78),
+      rgba(15, 23, 42, 0.58),
+      rgba(10, 15, 30, 0.78)
+    );
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.Home_heroSection .heroContent {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+
+  width: 100%;
+
+  padding: 0 20px;
+
+  text-align: center;
+
+  margin: 70px auto;
+
+  background: transparent;
+}
+
+.Home_heroSection .heroContent h1 {
+  font-size: 3rem !important;
+
+  color: white;
+
+  line-height: 1.1;
+
+  margin: 60px auto 20px;
+
+  font-weight: 800;
+
+  text-align: center;
+}
+
+.Home_heroSection .heroContent h1 span {
+  color: #7c5cff;
+}
+
+.Home_heroSection .heroContent p {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  line-height: 1.7;
+
+  font-size: 1.15rem;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.Home_heroSection .heroButtons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  flex-wrap: wrap;
+
+  margin-top: 45px;
+}
+
+.Home_heroSection .generateBtn {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border: none;
+
+  cursor: pointer;
+
+  border-radius: 60px;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  background: linear-gradient(
+    135deg,
+    #6c5ce7,
+    #8e7dff
+  );
+
+  color: white;
+
+  padding: 16px 34px;
+
+  box-shadow:
+    0 15px 35px rgba(108, 92, 231, 0.35);
+
+  transition: 0.35s;
+}
+
+.Home_heroSection .generateBtn:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 20px 45px rgba(108, 92, 231, 0.45);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .Home_heroSection {
+    min-height: 100vh;
+  }
+
+  .Home_heroSection .heroVideo {
+    object-position: center;
+  }
+
+  .Home_heroSection .heroContent h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .Home_heroSection .heroContent p {
+    font-size: 0.9rem;
+  }
+
+  .Home_heroSection .heroButtons {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .Home_heroSection .generateBtn {
+    width: 100%;
+
+    max-width: 320px;
+  }
+}

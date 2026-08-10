@@ -1,0 +1,61 @@
+.itineraryPage{
+
+    width:100%;
+    min-height:100vh;
+
+    padding:50px 10px ;
+   display: flex;
+   flex-direction: column;
+   
+    gap:20px;
+}
+
+.itineraryMain{
+
+    display:grid;
+
+    grid-template-columns:2.2fr .9fr;
+
+    gap:28px;
+
+    align-items:start;
+    width: 95%;
+    margin: 0 auto;
+   
+}
+
+.itineraryLeft{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:25px;
+   
+}
+
+
+
+@media(max-width:1100px){
+
+.itineraryMain{
+
+grid-template-columns:1fr;
+gap: 0;
+
+}
+
+
+
+}
+
+@media (max-with:900px) {
+    .itineraryPage{
+        padding: 40px 10px;
+    }
+}
+@media (max-with:576px) {
+    .itineraryPage{padding: 10px 10px;}
+.itineraryMain{
+    width: 100%;
+}
+} 

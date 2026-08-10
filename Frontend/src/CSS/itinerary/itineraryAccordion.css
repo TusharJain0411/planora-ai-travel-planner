@@ -1,0 +1,342 @@
+:root{
+    font-color:#252e45;
+    back: #d7e9f2;
+}
+
+.itineraryAccordion {
+
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 95%;
+    margin: 30px auto 0;
+padding-bottom: 0;
+}
+
+.itineraryAccordion h2 {
+
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+
+}
+.light-itinerary h2{
+    color: #252e45;
+}
+/* Accordion Card */
+
+.itineraryAccordion .dayCard {
+
+    background: var(--card);
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    transition: .3s;
+    width: 100%;
+
+}
+.light-itinerary .dayCard{
+    background: var(--back);
+    border: none;
+    box-shadow:
+    0 10px 35px rgba(29, 28, 28, 0.25);
+}
+
+.itineraryAccordion .dayCard:hover {
+
+    border-color: rgba(108, 92, 231, .35);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+
+}
+
+/* Header */
+
+.dayHeader {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 24px 28px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.dayHeader:hover {
+
+    background: rgba(255, 255, 255, .02);
+
+}
+
+.dayHeader>div {
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+/* Day Badge */
+
+.dayNumber {
+
+    width: fit-content;
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
+
+    background: rgba(108, 92, 231, .15);
+
+    color: var(--primary);
+
+    font-size: .8rem;
+
+    font-weight: 600;
+
+    letter-spacing: .5px;
+
+}
+
+/* Title */
+
+.dayHeader h3 {
+
+    color: var(--text);
+
+    font-size: 1.45rem;
+
+    font-weight: 600;
+
+}
+.light-itinerary .dayHeader h3{
+    color: var(--font-color);
+}
+
+/* Date */
+
+.dayHeader p {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--text-secondary);
+
+    font-size: .9rem;
+
+}
+
+.dayHeader p svg {
+
+    color: var(--primary);
+
+}
+
+/* Chevron */
+
+.dayHeader>svg {
+
+    font-size: 1.8rem;
+
+    color: var(--text-secondary);
+
+    transition: .35s;
+
+}
+
+.rotate {
+
+    transform: rotate(180deg);
+
+}
+
+/* Timeline Wrapper */
+
+.timelineWrapper {
+
+    padding: 10px 28px 28px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    animation: accordion .35s ease;
+
+}
+
+/* Divider */
+
+.timelineWrapper::before {
+
+    content: "";
+
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    background: rgba(255, 255, 255, .06);
+
+    margin-bottom: 10px;
+
+}
+
+/* Animation */
+
+@keyframes accordion {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(-10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+/* ================= 1200px ================= */
+
+@media (max-width:1200px) {
+
+    .dayHeader {
+
+        padding: 22px;
+
+    }
+
+    .timelineWrapper {
+
+        padding: 10px 22px 22px;
+
+    }
+
+}
+
+/* ================= 992px ================= */
+
+@media (max-width:992px) {
+
+    .dayHeader h3 {
+
+        font-size: 1.3rem;
+
+    }
+
+}
+
+/* ================= 768px ================= */
+
+@media (max-width:768px) {
+    .itineraryAccordion{
+        width: 100%;
+        padding: 0%;
+    }
+
+    .dayHeader {
+
+        padding: 20px;
+
+    }
+
+    .timelineWrapper {
+
+        padding: 10px 20px 20px;
+
+    }
+
+    .dayHeader h3 {
+
+        font-size: 1.2rem;
+
+    }
+
+    .dayHeader p {
+
+        font-size: .85rem;
+
+    }
+
+}
+
+/* ================= 576px ================= */
+
+@media (max-width:576px) {
+
+    .dayHeader {
+
+        align-items: flex-start;
+        gap: 18px;
+
+    }
+
+    .dayHeader>svg {
+
+        font-size: 1.5rem;
+
+        margin-top: 5px;
+
+    }
+
+    .dayNumber {
+
+        font-size: .75rem;
+
+        padding: 5px 12px;
+
+    }
+
+}
+
+/* ================= 480px ================= */
+
+@media (max-width:480px) {
+
+    .itineraryAccordion h2 {
+
+        font-size: 1.6rem;
+
+    }
+
+    .dayHeader {
+
+        padding: 18px;
+
+    }
+
+    .timelineWrapper {
+
+        padding: 8px 18px 18px;
+
+    }
+
+    .dayHeader h3 {
+
+        font-size: 1.05rem;
+
+        line-height: 1.4;
+
+    }
+
+    .dayHeader p {
+
+        font-size: .8rem;
+
+    }
+
+}

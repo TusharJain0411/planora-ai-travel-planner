@@ -1,0 +1,307 @@
+
+:root{--glass:rgba(255,255,255,.08);
+
+--bg:#0b1120;
+
+--card:#151d2f;
+
+--card2:#1b2438;
+
+--border:#2b3552;
+
+--primary:#6C5CE7;
+
+--secondary:#00C2FF;
+
+--text:#ffffff;
+
+--muted:#9ca3af;
+
+--radius:18px;
+
+  --blue:#3B82F6;
+    --text-light:#F8FAFC;
+    --text:#3B82F6;
+    --muted-light:#B4C2D6;
+    --muted:#97aecd;}
+
+
+
+.destination-card{
+
+    width:90%;
+    margin:auto;
+  
+    border-radius:22px;
+    padding:25px;
+    margin-bottom:25px;
+
+
+}
+.destination-card.dark{
+       background:#151d2f;
+    border:1px solid #29334d;
+}
+.destination-card.light{
+  background:white !important;
+border: none !important;
+  
+    box-shadow:
+    0 10px 35px rgba(29, 28, 28, 0.25);
+}
+
+.section-heading{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+    margin-bottom:25px;
+
+}
+
+.destination-icon{
+
+    background:rgba(108,92,231,.15);
+    border:2px solid rgba(108,92,231,.45);
+    color:#6C5CE7;
+    font-size:16px;
+    border-radius: 12px;
+     width:30px;
+    height:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+
+}
+
+.section-heading h3{
+
+    font-size:22px;
+    font-weight:600;
+
+}
+
+.light-heading-destination{
+    color: var(--card);
+}
+
+.search-box{
+
+    height:56px;
+    border-radius:16px;
+    background:#202b43;
+    border:1px solid #303b5b;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 18px;
+
+    margin-bottom:22px;
+
+}
+
+.search-icon{
+
+    color:#9CA3AF;
+    margin-right:14px;
+
+}
+.search-box > div {
+    flex: 1;
+    width: 100%;
+    z-index: 2;
+}
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    
+}
+.light-search-box {
+    background-color:#eef9ff;
+    border: 2px solid rgb(73, 149, 179);
+}
+.light-search-box input{
+    color: var(--card);
+}
+
+.pac-container {
+    margin-top: 1rem !important; 
+}
+
+/* Dark theme dropdown */
+body.dark-theme .pac-container {
+    background: #151d2f !important;
+    border: 1px solid #29334d !important;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.4);
+}
+
+body.dark-theme .pac-item {
+    background: #151d2f !important;
+    color: #fff !important;
+    border-top: 1px solid #29334d;
+}
+
+body.dark-theme .pac-item:hover,
+body.dark-theme .pac-item-selected {
+    background: #6C5CE7 !important;
+    color: white !important;
+}
+
+body.dark-theme .pac-item-query {
+    color: white !important;
+}
+
+/* Icon color */
+body.dark-theme .pac-icon {
+    filter: invert(1);
+}
+
+body:not(.dark-theme) .pac-container {
+    background: white;
+    border-radius: 12px;
+}
+
+body:not(.dark-theme) .pac-item:hover {
+    background: #eef9ff;
+    
+}
+body:not(.dark-theme) .pac-item-query:hover {
+  color: #6C5CE7 !important;
+}
+
+
+
+.destination-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+    margin-top:18px;
+
+}
+
+.place-card{
+
+    height:140px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+.place-card img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.place-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(to top,rgba(0,0,0,.8),transparent);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    padding:16px;
+
+}
+
+.overlay h4{
+
+    color:white;
+    font-size:17px;
+
+}
+
+.overlay span{
+
+    color:#00C2FF;
+    font-size:13px;
+
+}
+
+
+
+@media(max-width:992px){
+
+.destination-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:576px){
+
+.destination-card{
+
+width:90%;
+padding:18px;
+
+}
+
+.destination-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.search-box{
+
+height:48px;
+
+}
+
+.search-box input{
+
+font-size:14px;
+
+
+}
+
+.section-heading h3{
+
+font-size:18px;
+
+}
+
+.place-card{
+
+height:180px;
+
+}
+
+}

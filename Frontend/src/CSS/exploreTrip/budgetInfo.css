@@ -1,0 +1,208 @@
+.budgetSection{
+    width: 100%;
+}
+
+
+
+.budgetHeading h2{
+    font-size:2.5rem;
+    font-weight:700;
+    margin-bottom:8px;
+    color: white;
+}
+
+.light-budgetHeading h2{
+    color: #151d2f;
+}
+.budgetHeading p{
+    color:var(--text-secondary);
+}
+
+.budgetCards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.budgetCard{
+    position:relative;
+    border-radius:24px;
+    padding:20px;
+    overflow:hidden;
+    transition:.35s;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.budgetCard:hover{
+    transform:translateY(-10px);
+}
+
+.economy{
+    background:#123038;
+    border:2px solid #19d18b;
+}
+
+.standard{
+    background:#2d2b6f;
+    border:2px solid #7c6cff;
+}
+
+.luxury{
+    background:#26204d;
+    border:2px solid #b469ff;
+}
+
+.premium{
+    background:#363432;
+    border:2px solid #f4b02a;
+}
+
+.budgetCard-Head{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 10px;
+    flex-direction: row;
+}
+.budgetIcon{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin-bottom:20px;
+    
+}
+
+
+.economy .budgetIcon{
+    background:#1d4e4d;
+    color:#19d18b;
+}
+
+.standard .budgetIcon{
+    background:#3d3aa2;
+    color:#7c6cff;
+}
+
+.luxury .budgetIcon{
+    background:#33256d;
+    color:#b469ff;
+}
+
+.premium .budgetIcon{
+    background:#4c3d1e;
+    color:#f4b02a;
+}
+
+.budgetCard h3{
+    font-size:1.5rem;
+    margin-bottom:10px;
+    color: white;
+}
+
+.budgetCard h1{
+    font-size:1.5rem;
+    font-weight:700;
+    color: white;
+}
+
+.perDay{
+    color:#b8b8b8;
+    font-size: 14px;
+}
+
+.totalBox{
+    margin:10px 0;
+    padding:10px 15px;
+    border-radius:18px;
+    background:rgba(255,255,255,.05);
+}
+
+.totalBox small{
+    display:block;
+    margin-bottom:10px;
+    color:#aaa;
+}
+
+.totalBox h4{
+    font-size:1.5rem;
+}
+
+.economy .totalBox h4{
+    color:#19d18b;
+}
+
+.standard .totalBox h4{
+    color:#7c6cff;
+}
+
+.luxury .totalBox h4{
+    color:#b469ff;
+}
+
+.premium .totalBox h4{
+    color:#f4b02a;
+}
+
+.budgetCard ul{
+    list-style:none;
+    margin-top:10px;
+    margin-left: -25px;
+}
+
+.budgetCard li{
+    display:flex;
+    align-items:center;
+    justify-content: flex-start;
+    gap:10px;
+    margin-bottom:5px;
+    font-size:12px;
+    color: white;
+}
+
+.budgetCard li svg{
+    flex-shrink:0;
+}
+
+.economy li svg{
+    color:#19d18b;
+}
+
+.standard li svg{
+    color:#7c6cff;
+}
+
+.luxury li svg{
+    color:#b469ff;
+}
+
+.premium li svg{
+    color:#f4b02a;
+}
+
+.popularBadge{
+    position:absolute;
+    right:20px;
+    top:20px;
+    background:#7c4dff;
+    color:#fff;
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:.8rem;
+    font-weight:600;
+}
+
+@media(max-width:1200px){
+    .budgetCards{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+    .budgetCards{
+        grid-template-columns:1fr;
+    }
+}

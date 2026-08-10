@@ -1,0 +1,391 @@
+.dayCard {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    transition: .3s ease;
+    width: 100%;
+    
+}
+
+.dayCard:hover {
+
+    border-color: rgba(108, 92, 231, .35);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .18);
+
+}
+
+/* ================= Header ================= */
+
+.dayHeader {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 28px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+
+}
+
+.dayHeader:hover {
+
+    background: rgba(255, 255, 255, .02);
+
+}
+
+.dayHeaderLeft {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.dayNumber {
+
+    width: fit-content;
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
+
+    background: rgba(108, 92, 231, .15);
+
+    color: var(--primary);
+
+    font-size: .82rem;
+
+    font-weight: 600;
+
+}
+
+.dayHeader h3 {
+
+    color: var(--text);
+
+    font-size: 1.45rem;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+
+}
+
+.dayHeader p {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--text-secondary);
+
+    font-size: .92rem;
+
+}
+
+.dayHeader p svg {
+
+    color: var(--primary);
+
+}
+
+.dayHeader>svg {
+
+    font-size: 1.8rem;
+
+    color: var(--text-secondary);
+
+    transition: .35s;
+
+    flex-shrink: 0;
+
+}
+
+.rotate {
+
+    transform: rotate(180deg);
+
+}
+
+/* ================= Body ================= */
+
+.dayBody {
+
+    padding: 0 20px 20px;
+
+}
+
+.timelineWrapper {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 26px;
+
+}
+
+/* Divider */
+
+.dayDivider {
+
+    width: 100%;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, .06);
+
+    margin-bottom: 20px;
+
+}
+
+/* ================= Summary ================= */
+
+.daySummary {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+}
+
+.summaryChip {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, .05);
+
+    color: var(--text-secondary);
+
+    font-size: .85rem;
+
+}
+
+.summaryChip svg {
+
+    color: var(--primary);
+
+}
+
+/* ================= AI Tip ================= */
+
+.dayTip {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 16px 20px;
+
+    margin-bottom: 25px;
+
+    border-left: 4px solid var(--primary);
+
+    background: rgba(108, 92, 231, .08);
+
+    border-radius: 14px;
+
+}
+
+.dayTip h4 {
+
+    color: var(--text);
+
+    font-size: 1rem;
+
+    margin-bottom: 5px;
+
+}
+
+.dayTip p {
+
+    color: var(--text-secondary);
+
+    font-size: .9rem;
+
+    line-height: 1.6;
+
+}
+
+/* ================= Animation ================= */
+
+.dayBody {
+
+    animation: accordionOpen .35s ease;
+
+}
+
+@keyframes accordionOpen {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width:1200px){
+
+    .dayHeader{
+
+        padding:22px;
+
+    }
+
+    .dayBody{
+
+        padding:0 22px 22px;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .dayHeader h3{
+
+        font-size:1.3rem;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .dayHeader{
+
+        padding:20px;
+
+    }
+
+    .dayBody{
+
+        padding:0 20px 20px;
+
+    }
+
+    .daySummary{
+
+        gap:10px;
+
+    }
+
+    .summaryChip{
+
+        font-size:.8rem;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .dayHeader{
+
+        align-items:flex-start;
+
+    }
+
+    .dayHeader h3{
+
+        font-size:1.1rem;
+
+    }
+
+    .dayHeader p{
+
+        font-size:.82rem;
+
+    }
+
+    .dayTip{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .dayHeader{
+
+        padding:10px;
+
+    }
+
+    .dayBody{
+
+        padding:0 10px 10px;
+
+    }
+
+    .dayNumber{
+
+        font-size:.75rem;
+
+    }
+
+    .summaryChip{
+
+        width:100%;
+
+        justify-content:flex-start;
+
+    }
+
+    .dayTip{
+
+        padding:14px 16px;
+
+    }
+
+}
