@@ -2,10 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   loading: false,
-  theme: false,
-  openLogin:false
+  theme: false, // false = light, true = dark
+  openLogin: false,
 };
-
 
 const CommonStatesSlice = createSlice({
   name: "commonStates",
@@ -19,21 +18,22 @@ const CommonStatesSlice = createSlice({
     hideLoading: (state) => {
       state.loading = false;
     },
-    
-    darkTheme:(state)=>{
-        state.theme=true;
-    },
-    lightTheme:(state)=>{
-        state.theme=false;
-    },
-    setOpenLogin:(state,action)=>{
-       state.openLogin= action.payload;
+
+    setOpenLogin: (state, action) => {
+      state.openLogin = action.payload;
     },
 
-  }
+    setTheme: (state, action) => {
+      state.theme = action.payload;
+    },
+
+    toggleTheme: (state) => {
+      state.theme = !state.theme;
+    },
+  },
 });
 
-export const {showLoading,hideLoading,darkTheme,lightTheme,setOpenLogin,setCloseLogin} =
+export const { showLoading, hideLoading, setOpenLogin, setTheme, toggleTheme } =
   CommonStatesSlice.actions;
 
 export default CommonStatesSlice.reducer;

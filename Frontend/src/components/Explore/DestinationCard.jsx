@@ -1,13 +1,16 @@
-import { FiArrowRight, FiCalendar, FiMapPin } from "react-icons/fi";
+import { FiArrowRight, FiMapPin } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
+
 import { useSelector } from "react-redux";
-import "../../CSS/explore/destinationCard.css";
 import { useNavigate } from "react-router-dom";
 
-export default function DestinationCard({ destination }) {
+import "../../CSS/explore/destinationCard.css";
 
-    const { theme } = useSelector((state) => state.commonStates);
-    const navigate= useNavigate();
+export default function DestinationCard({ destination }) {
+  const { theme } = useSelector((state) => state.commonStates);
+
+  const navigate = useNavigate();
+
   return (
     <div className={`destinationCard ${theme ? "" : "light-destinationCard"}`}>
       <div className="destinationImage">

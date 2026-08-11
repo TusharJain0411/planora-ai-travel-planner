@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../CSS/navbar.css";
 import { useDispatch, useSelector } from "react-redux";
-import {darkTheme,lightTheme, setOpenLogin} from "../Redux/Slice/CommonStatesSlice"
+import { setTheme, setOpenLogin } from "../Redux/Slice/CommonStatesSlice";
 import { FaSun, FaMoon, FaPlaneDeparture } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import { useState, useRef, useEffect } from "react";
@@ -11,7 +11,7 @@ import Login_register from "./Login_register/Login_register";
 import { logout } from "../Redux/Slice/userSlice";
 import { useNavigate } from "react-router-dom";
 import { GoChevronDown, GoChevronUp } from "react-icons/go";
-
+import { updateUserTheme } from "../services/authAPI";
 
 function Navbar() {
 
@@ -25,14 +25,23 @@ function Navbar() {
    const [profileOpen,setProfileOpen]=useState(false);
    const [profileMenuOpen,setProfileMenuOpen]=useState(false);
 
-const toggleTheme=()=>{
-  if(theme){
-dispatch(lightTheme());
+const toggleTheme = async () => {
+  const newTheme = !theme;
+
+  // Update Redux immediately
+  dispatch(setTheme(newTheme));
+
+  // Only save to DB if logged in
+  if (isLoggedIn) {
+    try {
+      const token = localStorage.getItem("token");
+
+      await updateUserTheme(newTheme, token);
+    } catch (error) {
+      console.error("Failed to save theme:", error);
+    }
   }
-  else{
-    dispatch(darkTheme());
-  }
-}
+};
 
 const handleOpenLogin=()=>{
 dispatch(setOpenLogin(true));
@@ -97,7 +106,7 @@ useEffect(() => {
   return (
     <>
       {openLogin && (
-        <div className="popup-overlay" onClick={() => setOpenLogin(false)}>
+        <div className="popup-overlay" onClick={() =>dispatch( setOpenLogin(false))}>
           <div className="popup-login" onClick={(e) => e.stopPropagation()}>
             <Login_register closeModal={() => dispatch(setOpenLogin(false))} />
           </div>

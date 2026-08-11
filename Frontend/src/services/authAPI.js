@@ -24,3 +24,18 @@ export const googleLogin = async (idToken) => {
   const res = await api.post("/google", { idToken });
   return res.data;
 };
+
+//update Theme
+export const updateUserTheme = async (theme, token) => {
+  const res = await api.put(
+    "/theme",
+    { theme },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  );
+
+  return res.data;
+};

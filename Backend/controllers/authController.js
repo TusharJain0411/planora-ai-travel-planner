@@ -114,4 +114,42 @@ import jwt from "jsonwebtoken";
   }
 };
 
-export { register, login, googleLogin };
+
+
+const updateTheme = async (req, res) => {
+  try {
+    const { theme } = req.body;
+
+    if (typeof theme !== "boolean") {
+      return res.status(400).json({
+        success: false,
+        message: "Theme must be a boolean",
+      });
+    }
+
+    const user = await User.findByIdAndUpdate(
+      req.user.id,
+      { theme },
+      { new: true },
+    );
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      theme: user.theme,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: err.message,
+    });
+  }
+};
+
+export { register, login, googleLogin, updateTheme };

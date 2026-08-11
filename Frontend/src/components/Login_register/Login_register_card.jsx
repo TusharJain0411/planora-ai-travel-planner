@@ -171,7 +171,6 @@ if (!loginData.email || !loginData.password) {
     <>
       {shift ? (
         <div className="register-card">
-          {/* LOGO */}
           <div className="register-logo">
             <div className="register-circle">
               <FaPlaneDeparture />
@@ -180,15 +179,12 @@ if (!loginData.email || !loginData.password) {
             <h2>Planora</h2>
           </div>
 
-          {/* HEADING */}
           <div className="register-heading">
             <h1>Create Account</h1>
             <p>Start your AI-powered travel experience.</p>
           </div>
 
-          {/* FORM */}
           <form className="register-form" onSubmit={handleRegister}>
-            {/* Full Name*/}
             <div className="form-group">
               <div className="input-box">
                 <FaUser />
@@ -197,12 +193,11 @@ if (!loginData.email || !loginData.password) {
                   type="text"
                   placeholder="Enter your Full Name"
                   name="name"
-                 
                   onChange={handleRegisterChange}
                 />
               </div>
             </div>
-            {/* EMAIL */}
+
             <div className="form-group">
               <div className="input-box">
                 <FaEnvelope />
@@ -211,13 +206,11 @@ if (!loginData.email || !loginData.password) {
                   type="email"
                   placeholder="Enter your email"
                   name="email"
-                  
                   onChange={handleRegisterChange}
                 />
               </div>
             </div>
 
-            {/* PASSWORD */}
             <div className="form-group">
               <div className="input-box">
                 <FaLock />
@@ -226,7 +219,6 @@ if (!loginData.email || !loginData.password) {
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
                   name="password"
-                 
                   onChange={handleRegisterChange}
                 />
 
@@ -240,7 +232,6 @@ if (!loginData.email || !loginData.password) {
               </div>
             </div>
 
-            {/* Confirm Password */}
             <div className="form-group">
               <div className="input-box">
                 <FaLock />
@@ -249,7 +240,6 @@ if (!loginData.email || !loginData.password) {
                   type={showConfirmPassword ? "text" : "password"}
                   placeholder="Confirm the password"
                   name="confirmPassword"
-                 
                   onChange={handleRegisterChange}
                 />
 
@@ -263,21 +253,13 @@ if (!loginData.email || !loginData.password) {
               </div>
             </div>
 
-            {/* LOGIN BUTTON */}
-            <button className="register-btn" type='submit'>
+            <button className="register-btn" type="submit">
               Register
             </button>
 
-            {/* DIVIDER */}
             <div className="divider">
               <span>OR</span>
             </div>
-
-            {/* SOCIAL LOGIN */}
-            <button type="button" className="social-btn">
-              <FaGithub />
-              Continue with GitHub
-            </button>
 
             <button
               type="button"
@@ -288,7 +270,6 @@ if (!loginData.email || !loginData.password) {
               Continue with Google
             </button>
 
-            {/* FOOTER */}
             <div className="login-link">
               Already have an account?
               <a onClick={switchLogin}> Sign In</a>
@@ -297,7 +278,6 @@ if (!loginData.email || !loginData.password) {
         </div>
       ) : (
         <div className="login-card">
-          {/* LOGO */}
           <div className="login-logo">
             <div className="logo-circle">
               <FaPlaneDeparture />
@@ -306,15 +286,12 @@ if (!loginData.email || !loginData.password) {
             <h2>Planora</h2>
           </div>
 
-          {/* HEADING */}
           <div className="login-heading">
             <h1>Welcome Back</h1>
             <p>Sign in to continue your journey.</p>
           </div>
 
-          {/* FORM */}
           <form className="login-form" onSubmit={handleLogin}>
-            {/* EMAIL */}
             <div className="form-group">
               <div className="input-box">
                 <FaEnvelope />
@@ -323,13 +300,11 @@ if (!loginData.email || !loginData.password) {
                   type="email"
                   placeholder="Enter your email"
                   name="email"
-                 
                   onChange={handleLoginChange}
                 />
               </div>
             </div>
 
-            {/* PASSWORD */}
             <div className="form-group">
               <div className="input-box">
                 <FaLock />
@@ -338,7 +313,6 @@ if (!loginData.email || !loginData.password) {
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
                   name="password"
-                  
                   onChange={handleLoginChange}
                 />
 
@@ -352,26 +326,13 @@ if (!loginData.email || !loginData.password) {
               </div>
             </div>
 
-            {/* OPTIONS */}
-            <div className="form-options">
-              <a href="/">Forgot Password?</a>
-            </div>
-
-            {/* LOGIN BUTTON */}
-            <button className="signin-btn" type='submit'>
+            <button className="signin-btn" type="submit">
               Sign In
             </button>
 
-            {/* DIVIDER */}
             <div className="divider">
               <span>OR</span>
             </div>
-
-            {/* SOCIAL LOGIN */}
-            <button type="button" className="social-btn">
-              <FaGithub />
-              Continue with GitHub
-            </button>
 
             <button
               type="button"
@@ -382,14 +343,16 @@ if (!loginData.email || !loginData.password) {
               Continue with Google
             </button>
 
-            {/* FOOTER */}
             <div className="register-link">
               Don't have an account?
               <a onClick={switchRegister}> Create Account</a>
             </div>
           </form>
         </div>
-      )}
+      )} 
+
+       
+      
     </>
   );
 }

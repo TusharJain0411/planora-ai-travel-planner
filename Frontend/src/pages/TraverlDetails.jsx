@@ -76,7 +76,7 @@ const navigate = useNavigate();
           <button
             className={`GenerateItinaryBtn ${theme ? "dark-generate-btn" : ""}`}
             onClick={handleGenerate}
-            disabled={currentStep<4}
+            disabled={currentStep<3}
           >
             <LuPlane /> <span>Generate My Itinerary</span>
           </button>

@@ -36,11 +36,12 @@ const theme = useSelector((item) => item.commonStates.theme);
             <Route
               path="/explore"
               element={
-                <ProtectedRoute>
+               <ProtectedRoute>
                   <Layout>
                     <Explore />
                   </Layout>
-                </ProtectedRoute>
+               </ProtectedRoute>
+               
               }
             />
             <Route
@@ -48,17 +49,19 @@ const theme = useSelector((item) => item.commonStates.theme);
               element={
                 <ProtectedRoute>
                   <TraverlDetails />
-                </ProtectedRoute>
+               </ProtectedRoute>
               }
             />
             <Route
               path="/trips"
               element={
-                <ProtectedRoute>
+               <ProtectedRoute>
+
                   <Layout>
                     <Trips />
                   </Layout>
-                </ProtectedRoute>
+               </ProtectedRoute>
+                
               }
             />
             <Route
@@ -67,7 +70,7 @@ const theme = useSelector((item) => item.commonStates.theme);
                 <ProtectedRoute>
                   <Layout>
                     <Itinerary />
-                  </Layout>
+                  </Layout>/
                 </ProtectedRoute>
               }
             />
