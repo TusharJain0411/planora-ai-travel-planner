@@ -1,4 +1,4 @@
-import { initializeApp, cert, getApps } from "firebase-admin/app";
+import { initializeApp, cert } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
 
 const serviceAccount = {
@@ -7,11 +7,8 @@ const serviceAccount = {
   privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
 };
 
-const firebaseApp =
-  getApps().length === 0
-    ? initializeApp({
-        credential: cert(serviceAccount),
-      })
-    : getApps()[0];
+initializeApp({
+  credential: cert(serviceAccount),
+});
 
-export const adminAuth = getAuth(firebaseApp);
+export const adminAuth = getAuth();

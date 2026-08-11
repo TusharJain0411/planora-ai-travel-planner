@@ -7,7 +7,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import tripRoutes from "./routes/tripRoutes.js";
 import itineraryRoutes from "./routes/itineraryRoutes.js";
-
+const PORT=5000
 
 
 connectDB();
