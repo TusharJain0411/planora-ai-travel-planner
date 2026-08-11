@@ -1,4 +1,4 @@
-import "../../CSS/travelDetailsCSS/TravelDates.css";
+import "../../CSS/travelDetailsCSS/travelDates.css";
 import { FaCalendarAlt } from "react-icons/fa";
 import Calendar from "./Calendar";
 import { useSelector } from "react-redux";

@@ -1,4 +1,4 @@
-import "../../CSS/travelDetailsCSS/travelStyle.css";
+import "../../CSS/travelDetailsCSS/TravelStyle.css";
 import {
   FaHeart,
   FaUser,
@@ -21,7 +21,6 @@ import { PiMountains } from "react-icons/pi";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setTravelStyle } from "../../Redux/Slice/tripSlice";
-
 
 function TravelStyle() {
   const dispatch = useDispatch();
@@ -79,7 +78,6 @@ function TravelStyle() {
       }),
     );
   };
-
 
   return (
     <section
