@@ -14,13 +14,20 @@ connectDB();
 
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://planora-ai-travel-planner-irpi6oybb-tushars-projects-bb977c1f.vercel.app",
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: allowedOrigins,
     credentials: true,
   }),
 );
+
 app.use(express.json({ limit: "5mb" }));
+
 app.use(
   express.urlencoded({
     extended: true,
