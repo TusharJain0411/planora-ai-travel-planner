@@ -7,13 +7,13 @@ import { getItinerary } from "../services/itineraryApi";
 import { setItinerary } from "../Redux/Slice/tripSlice";
 
 import HeroBanner from "../components/Itinerary/HeroBanner";
-import TripStats from "../Components/Itinerary/TripStats";
-import ItineraryAccordion from "../Components/Itinerary/ItineraryAccordion";
-import TripSidebar from "../Components/Itinerary/TripSidebar";
-import RouteMap from "../Components/Itinerary/RouteMap";
-import HotelSection from "../Components/Itinerary/HotelSection";
-import RestaurantSection from "../Components/Itinerary/Restaurant/RestaurantSection";
-import BottomActions from "../Components/Itinerary/BottomActions";
+import TripStats from "../components/Itinerary/TripStats";
+import ItineraryAccordion from "../components/Itinerary/ItineraryAccordion";
+import TripSidebar from "../components/Itinerary/TripSidebar";
+import RouteMap from "../components/Itinerary/RouteMap";
+import HotelSection from "../components/Itinerary/HotelSection";
+import RestaurantSection from "../components/Itinerary/Restaurant/RestaurantSection";
+import BottomActions from "../components/Itinerary/BottomActions";
 import BudgetSection from "../components/Itinerary/BudgetSection";
 import WeatherSection from "../components/Itinerary/WeatherSection";
 

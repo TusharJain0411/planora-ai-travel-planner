@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import commonStatesReducer from "./Slice/CommonStatesSlice"
 import userReducer from "./Slice/userSlice"
-import tripReducer from "./slice/tripSlice";
+import tripReducer from "./Slice/tripSlice";
 
 const store = configureStore({
   reducer: {
