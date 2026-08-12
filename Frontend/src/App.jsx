@@ -24,12 +24,15 @@ function App() {
 
   return (
     <div className={`${theme ? "dark-bg" : "light-bg"}`}>
-      {/* Handles Google redirect after authentication */}
-      <AuthRedirectHandler />
 
       <Toaster position="top-right" reverseOrder={false} />
 
       <BrowserRouter>
+
+      
+      {/* Handles Google redirect after authentication */}
+      <AuthRedirectHandler />
+
         <Routes>
           {/* HOME */}
           <Route
