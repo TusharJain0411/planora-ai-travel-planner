@@ -17,6 +17,8 @@ console.log("Firebase config:", {
   projectId: firebaseConfig.projectId,
   storageBucket: firebaseConfig.storageBucket,
   appId: firebaseConfig.appId,
+  apiKey:firebaseConfig.apiKey,
+  messagingSenderId:firebaseConfig.messagingSenderId
 });
 
 export const auth = getAuth(app);
