@@ -1,16 +1,16 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getRedirectResult } from "firebase/auth";
-import { auth } from "../firebase/firebase";
 
+import { auth } from "../firebase/firebase";
 import { googleLogin } from "../services/authAPI";
 
 import { loginSuccess, setError } from "../Redux/Slice/userSlice";
 
 import { setOpenLogin, setTheme } from "../Redux/Slice/CommonStatesSlice";
 
-import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export default function AuthRedirectHandler() {
   const dispatch = useDispatch();
@@ -23,7 +23,8 @@ export default function AuthRedirectHandler() {
 
         const result = await getRedirectResult(auth);
 
-        // No Google login happened
+        console.log("Redirect result:", result);
+
         if (!result) {
           console.log("No redirect login result");
           return;
