@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "../../CSS/Login_register_card.css";
 
 import { useDispatch } from "react-redux";
@@ -138,7 +138,7 @@ function Login_register_card() {
   }, []);
 
 
-  
+
   return (
     <div className="register-card">
       <div className="register-logo">
