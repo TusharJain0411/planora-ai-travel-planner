@@ -12,4 +12,11 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 
+console.log("Firebase config:", {
+  authDomain: firebaseConfig.authDomain,
+  projectId: firebaseConfig.projectId,
+  storageBucket: firebaseConfig.storageBucket,
+  appId: firebaseConfig.appId,
+});
+
 export const auth = getAuth(app);
