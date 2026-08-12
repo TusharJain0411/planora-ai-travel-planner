@@ -19,19 +19,19 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests without an Origin header
-      // (Postman, server-to-server requests, etc.)
+      console.log("REQUEST ORIGIN:", origin);
+
       if (!origin) {
         return callback(null, true);
       }
 
       if (allowedOrigins.includes(origin)) {
+        console.log("CORS ALLOWED:", origin);
         return callback(null, true);
       }
 
-      console.log("❌ CORS blocked origin:", origin);
-
-      return callback(new Error("Not allowed by CORS"));
+      console.log("CORS BLOCKED:", origin);
+      return callback(new Error(`CORS blocked: ${origin}`));
     },
     credentials: true,
   }),
