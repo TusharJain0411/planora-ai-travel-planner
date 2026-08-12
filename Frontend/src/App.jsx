@@ -17,7 +17,7 @@ import Trips from "./pages/Trips";
 import ExploreTrip from "./pages/ExploreTrip";
 import EditTravelDetails from "./pages/EditTravelDetails";
 
-import AuthRedirectHandler from "./components/AuthRedirectHandler";
+
 
 function App() {
   const theme = useSelector((state) => state.commonStates.theme);
@@ -30,8 +30,7 @@ function App() {
       <BrowserRouter>
 
       
-      {/* Handles Google redirect after authentication */}
-      <AuthRedirectHandler />
+     
 
         <Routes>
           {/* HOME */}

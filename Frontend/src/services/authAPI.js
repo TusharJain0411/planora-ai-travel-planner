@@ -7,23 +7,22 @@ const api = axios.create({
   withCredentials: true,
 });
 
-// Register
-// export const registerUser = async (userData) => {
-//   const res = await api.post("/register", userData);
-//   return res.data;
-// };
-
-// Login
-// export const loginUser = async (userData) => {
-//   const res = await api.post("/login", userData);
-//   return res.data;
-// };
-
-// Google Login
-export const googleLogin = async (idToken) => {
-  const res = await api.post("/google", { idToken });
+export const registerUser = async (userData) => {
+  const res = await api.post("/register", userData);
   return res.data;
 };
+
+export const loginUser = async (userData) => {
+  const res = await api.post("/login", userData);
+  return res.data;
+};
+
+
+// Google Login
+// export const googleLogin = async (idToken) => {
+//   const res = await api.post("/google", { idToken });
+//   return res.data;
+// };
 
 //update Theme
 export const updateUserTheme = async (theme, token) => {

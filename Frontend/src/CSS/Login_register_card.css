@@ -1,230 +1,333 @@
+/* =========================================
+   LOGIN / REGISTER CARD
+========================================= */
 
-
-/* ===========================
-   LOGIN CARD
-=========================== */
-
-.login-card,.register-card{
-
-    width:470px;
-
-    background:rgba(20,28,43,.95);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:28px;
-
-    padding:20px;
-
-    backdrop-filter:blur(20px);
-
-    box-shadow:
-    0 25px 60px rgba(0,0,0,.45);
-
+.login-card,
+.register-card {
+  width: 470px;
+  max-width: 95%;
+  background: rgba(20, 28, 43, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 32px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  color: white;
 }
 
-/* ===========================
-LOGO
-=========================== */
 
-.login-logo,.register-logo{
+/* =========================================
+   LOGO
+========================================= */
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:14px;
-
-    margin-bottom:20px;
-
+.login-logo,
+.register-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
 }
 
-.logo-circle,.register-circle{
+.logo-circle,
+.register-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
 
-    width:35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    height:35px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:
-    linear-gradient(
+  background: linear-gradient(
     135deg,
     #3fd8ff,
-    #4264ff);
-
-    color:white;
-
-    font-size:16px;
-
-}
-
-.login-logo h2 ,.register-logo h2{
-
-    color:white;
-
-    font-size:26px;
-
-    font-weight:700;
-
-}
-
-/* ===========================
-HEADING
-=========================== */
-
-.login-heading,.register-heading{
-
-    margin-bottom:35px;
-
-}
-
-.login-heading h1,.register-heading h1{
-
-    color:white;
-
-    font-size:24px;
-
-    margin-bottom:10px;
-
-}
-
-.login-heading p,.register-heading p{
-
-    color:#a8b4c8;
-
-    font-size:14px;
-
-}
-
-
-
-
-
-/* ===========================
-SOCIAL
-=========================== */
-
-.social-btn{
-
-    width:100%;
-
-   
-
-    border-radius:35px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    background:#2a3448;
-
-    color:white;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:7px;
-
-    font-size:17px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.35s;
-padding: 10px 0;
-}
-
-.social-btn:hover{
-
-    background:#36435b;
-
-    transform:translateY(-2px);
-
-}
-
-.social-btn i{
-
-    font-size:21px;
-
-     background: conic-gradient(
-    #4285f4 0deg 90deg,
-    #34a853 90deg 180deg,
-    #fbbc05 180deg 270deg,
-    #ea4335 270deg 360deg
+    #4264ff
   );
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: white;
+  font-size: 18px;
 
+  box-shadow: 0 8px 25px rgba(66, 100, 255, 0.35);
+}
+
+.login-logo h2,
+.register-logo h2 {
+  color: white;
+  font-size: 27px;
+  font-weight: 700;
+  margin: 0;
 }
 
 
+/* =========================================
+   HEADING
+========================================= */
 
-@media(max-width:600px){
-
-.login-card,.register-card{
-
-width:95%;
-
-padding:25px;
-position: relative;
+.login-heading,
+.register-heading {
+  text-align: center;
+  margin-bottom: 28px;
 }
 
-.login-heading h1, .register-heading h1{
-
-font-size:32px;
-
+.login-heading h1,
+.register-heading h1 {
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0 0 10px;
 }
 
-.login-heading p,.register-heading p{
-
-font-size:15px;
-
+.login-heading p,
+.register-heading p {
+  color: #a8b4c8;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
 }
 
-.signin-btn,.register-btn{
 
-padding: 14px;
+/* =========================================
+   FORM
+========================================= */
 
-font-size:18px;
-
+.login-card form,
+.register-card form {
+  width: 100%;
 }
 
-.social-btn{
-padding: 14px;
 
-font-size:15px;
+/* =========================================
+   INPUT GROUP
+========================================= */
 
+.input-group {
+  width: 100%;
+  margin-bottom: 17px;
 }
 
-.input-box{
-    display:flex;
-    align-items:center;
-    gap:12px;
+.input-group input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 14px 17px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  outline: none;
+
+  background: rgba(42, 52, 72, 0.8);
+
+  color: white;
+
+  font-size: 15px;
+
+  transition: all 0.3s ease;
 }
 
-.login-eye-btn,
-.eye-btn{
-    position:static;
-    margin-left:auto;
+.input-group input::placeholder {
+  color: #8d9ab0;
 }
 
-.input-box input{
-    flex:1;
-    width:100%;
-    min-width:0;
-    padding-right:8px;
+.input-group input:focus {
+  border-color: #4264ff;
+
+  background: rgba(42, 52, 72, 1);
+
+  box-shadow:
+    0 0 0 3px rgba(66, 100, 255, 0.12);
 }
+
+.input-group input:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================
+   LOGIN / REGISTER BUTTON
+========================================= */
+
+.social-btn {
+  width: 100%;
+
+  margin-top: 8px;
+
+  padding: 14px 20px;
+
+  border: none;
+  border-radius: 35px;
+
+  background: linear-gradient(
+    135deg,
+    #3fd8ff,
+    #4264ff
+  );
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 10px 25px rgba(66, 100, 255, 0.25);
+}
+
+.social-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(66, 100, 255, 0.35);
+}
+
+.social-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.social-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* =========================================
+   LOGIN / REGISTER SWITCH
+========================================= */
+
+.auth-switch {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.auth-switch p {
+  margin: 0;
+
+  color: #a8b4c8;
+
+  font-size: 14px;
+}
+
+.auth-switch button {
+  border: none;
+  background: transparent;
+
+  color: #3fd8ff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  padding: 0;
+
+  transition: color 0.25s ease;
+}
+
+.auth-switch button:hover {
+  color: #4264ff;
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .login-card,
+  .register-card {
+    width: 95%;
+    max-width: 470px;
+
+    padding: 26px 20px;
+
+    border-radius: 22px;
+  }
+
+  .login-logo,
+  .register-logo {
+    margin-bottom: 22px;
+  }
+
+  .logo-circle,
+  .register-circle {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .login-logo h2,
+  .register-logo h2 {
+    font-size: 24px;
+  }
+
+  .login-heading,
+  .register-heading {
+    margin-bottom: 24px;
+  }
+
+  .login-heading h1,
+  .register-heading h1 {
+    font-size: 22px;
+  }
+
+  .login-heading p,
+  .register-heading p {
+    font-size: 13px;
+  }
+
+  .input-group {
+    margin-bottom: 15px;
+  }
+
+  .input-group input {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .social-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .auth-switch {
+    margin-top: 20px;
+  }
+
+  .auth-switch p,
+  .auth-switch button {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 380px) {
+  .login-card,
+  .register-card {
+    padding: 22px 16px;
+  }
+
+  .login-heading h1,
+  .register-heading h1 {
+    font-size: 20px;
+  }
+
+  .input-group input {
+    padding: 12px;
+  }
+
+  .social-btn {
+    padding: 12px;
+  }
 }

@@ -2,27 +2,37 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
-    name: String,
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
 
     email: {
       type: String,
+      required: true,
       unique: true,
+      lowercase: true,
+      trim: true,
     },
 
     password: {
       type: String,
-      default: null,
-    },
-    theme: {
-      type: Boolean,
-      default: true, // false = light, true = dark
+      required: true,
     },
 
-    photo: String,
+    theme: {
+      type: Boolean,
+      default: false,
+    },
+
+    photo: {
+      type: String,
+      default: "",
+    },
 
     provider: {
       type: String,
-      enum: ["local", "google"],
       default: "local",
     },
   },
