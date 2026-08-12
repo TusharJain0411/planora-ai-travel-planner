@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
+
 import TripCard from "../components/Trips/TripCard";
+import TripCardSkeleton from "../components/Trips/TripCardSkeleton";
+
 import { fetchTripsAPI } from "../services/tripsActionAPI";
+
 import "../CSS/trips.css";
 
 export default function Trips() {
@@ -25,18 +29,22 @@ export default function Trips() {
     loadTrips();
   }, []);
 
-  if (loading) {
-    return <p>Loading trips...</p>;
-  }
-
   if (error) {
-    return <p>{error}</p>;
+    return (
+      <section className="tripsPage">
+        <p>{error}</p>
+      </section>
+    );
   }
 
   return (
     <section className="tripsPage">
       <div className="tripsGrid">
-        {trips.length > 0 ? (
+        {loading ? (
+          Array.from({ length: 6 }).map((_, index) => (
+            <TripCardSkeleton key={index} />
+          ))
+        ) : trips.length > 0 ? (
           trips.map((trip) => <TripCard key={trip._id} trip={trip} />)
         ) : (
           <p>No trips found.</p>

@@ -12,6 +12,7 @@ import { logout } from "../Redux/Slice/userSlice";
 import { useNavigate } from "react-router-dom";
 import { GoChevronDown, GoChevronUp } from "react-icons/go";
 import { updateUserTheme } from "../services/authAPI";
+import { resetTrip } from "../Redux/Slice/tripSlice";
 
 function Navbar() {
 
@@ -24,6 +25,7 @@ function Navbar() {
    const navigate=useNavigate();
    const [profileOpen,setProfileOpen]=useState(false);
    const [profileMenuOpen,setProfileMenuOpen]=useState(false);
+   const [logoutLoading,setLogoutLoading]=useState(false); 
 
 const toggleTheme = async () => {
   const newTheme = !theme;
@@ -60,16 +62,19 @@ const handleProfileMenu=()=>{
 }
 const handleLogout = async () => {
   try {
-    // If user logged in with Firebase (Google/GitHub)
+   setLogoutLoading(true);
     if (auth.currentUser) {
       await signOut(auth);
     }
       dispatch(setOpenLogin(false));
     dispatch(logout());
-window.location.reload();
     navigate("/");
+window.location.reload();
   } catch (err) {
     console.log(err);
+  }
+  finally{
+    setLogoutLoading(false);
   }
 };
 
@@ -161,6 +166,7 @@ useEffect(() => {
                 onClick={(e) => {
                   if (!isLoggedIn) {
                     e.preventDefault();
+                    dispatch(resetTrip());
                     dispatch(setOpenLogin(true));
                   }
                 }}
@@ -249,6 +255,7 @@ useEffect(() => {
                     onClick={(e) => {
                       if (!isLoggedIn) {
                         e.preventDefault();
+                        dispatch(resetTrip());
                         dispatch(setOpenLogin(true));
                       }
                     }}
@@ -267,9 +274,16 @@ useEffect(() => {
                 </button>
 
                 {isLoggedIn ? (
+                  logoutLoading ?
+                   <button class="logout-btn" type="button" disabled>
+                  
+                    Signing out...
+                   </button>
+                   :
                   <button className="logout-btn" onClick={handleLogout}>
                     Logout
                   </button>
+                  
                 ) : (
                   <button
                     className={`login-menu-btn `}

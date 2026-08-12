@@ -1,5 +1,5 @@
 import "../CSS/itinerary/itinerary.css";
-
+import ItineraryLoader from "../components/Itinerary/ItineraryLoader";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -48,9 +48,20 @@ export default function Itinerary() {
   };
   
 
+
 useEffect(() => {
   const fetchTrip = async () => {
     try {
+      const token = localStorage.getItem("token");
+
+      console.log("Trip ID:", tripId);
+      console.log("Token exists:", !!token);
+
+      if (!token) {
+        console.error("No authentication token found");
+        return;
+      }
+
       const res = await getItinerary(tripId, token);
 
       console.log("ITINERARY RESPONSE:", res);
@@ -59,15 +70,15 @@ useEffect(() => {
 
       dispatch(setItinerary(res.itinerary));
     } catch (err) {
-      console.log(err);
+      console.error("Itinerary Error:", err.response?.data || err);
     }
   };
 
   fetchTrip();
-}, [tripId, token, dispatch]);
+}, [tripId, dispatch]);
 
 if (!itinerary) {
-  return <h2>Loading...</h2>;
+  return <ItineraryLoader />;
 }
 
   return (

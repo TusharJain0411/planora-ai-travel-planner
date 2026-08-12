@@ -1,0 +1,103 @@
+.tripSkeletonCard {
+  width: 100%;
+  overflow: hidden;
+
+  background: #1b2537;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.light-tripSkeletonCard{
+    background: #fff;
+    border:1px solid rgb(216, 214, 214);
+}
+
+.trip-skeleton {
+  position: relative;
+  overflow: hidden;
+
+  background: #273349;
+}
+
+.light-tripSkeletonCard .trip-skeleton{
+background:rgb(233, 232, 232) ;
+}
+
+.trip-skeleton::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  transform: translateX(-100%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+
+  animation: skeletonLoading 1.5s infinite;
+}
+
+.trip-skeletonImage {
+  width: 100%;
+  height: 220px;
+}
+
+.trip-skeletonContent {
+  padding: 20px;
+}
+
+.trip-skeletonTitle {
+  width: 65%;
+  height: 24px;
+
+  margin-bottom: 18px;
+
+  border-radius: 6px;
+}
+
+.trip-skeletonText {
+  width: 90%;
+  height: 14px;
+
+  margin-bottom: 10px;
+
+  border-radius: 5px;
+}
+
+.trip-skeletonText.short {
+  width: 60%;
+}
+
+.trip-skeletonDetails {
+  display: flex;
+  gap: 10px;
+
+  margin: 20px 0;
+}
+
+.trip-skeletonDetail {
+  width: 80px;
+  height: 32px;
+
+  border-radius: 8px;
+}
+
+.trip-skeletonButton {
+  width: 100%;
+  height: 42px;
+
+  border-radius: 10px;
+}
+
+@keyframes skeletonLoading {
+  100% {
+    transform: translateX(100%);
+  }
+}

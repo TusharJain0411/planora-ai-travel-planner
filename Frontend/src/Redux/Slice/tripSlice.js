@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   currentStep: 1,
+
   destination: {
     name: "",
     placeId: "",
@@ -38,6 +39,7 @@ const initialState = {
     food: "Vegetarian",
     extras: [],
   },
+
   itinerary: null,
 };
 
@@ -50,50 +52,78 @@ const tripSlice = createSlice({
       state.currentStep = action.payload;
     },
 
-    setDestination(state, action) {
+    setDestination: (state, action) => {
       state.destination = action.payload;
     },
 
-    setTravelDates(state, action) {
+    setTravelDates: (state, action) => {
       state.travelDates = action.payload;
     },
 
-    setTravelers(state, action) {
+    setTravelers: (state, action) => {
       state.travelers = action.payload;
     },
 
-    setBudget(state, action) {
+    setBudget: (state, action) => {
       state.budget = action.payload;
     },
 
-    setTravelStyle(state, action) {
+    setTravelStyle: (state, action) => {
       state.travelStyle = action.payload;
     },
 
-    setPreferences(state, action) {
+    setPreferences: (state, action) => {
       state.preferences = action.payload;
-    },
-
-    resetTrip() {
-      return initialState;
     },
 
     setItinerary: (state, action) => {
       state.itinerary = action.payload;
     },
+
+    resetTrip: () => ({
+      ...initialState,
+
+      destination: {
+        ...initialState.destination,
+      },
+
+      travelDates: {
+        ...initialState.travelDates,
+      },
+
+      travelers: {
+        ...initialState.travelers,
+      },
+
+      budget: {
+        ...initialState.budget,
+      },
+
+      travelStyle: {
+        ...initialState.travelStyle,
+        interests: [],
+      },
+
+      preferences: {
+        ...initialState.preferences,
+        extras: [],
+      },
+
+      itinerary: null,
+    }),
   },
 });
 
 export const {
+  setCurrentStep,
   setDestination,
   setTravelDates,
   setTravelers,
   setBudget,
   setTravelStyle,
   setPreferences,
-  resetTrip,
-  setCurrentStep,
   setItinerary,
+  resetTrip,
 } = tripSlice.actions;
 
 export default tripSlice.reducer;

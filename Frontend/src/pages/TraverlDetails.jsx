@@ -15,6 +15,7 @@ import { setCurrentStep } from "../Redux/Slice/tripSlice";
 
 import { hideLoading, showLoading } from '../Redux/Slice/CommonStatesSlice';
 
+
 function TraverlDetails() {
   const {theme,loading} = useSelector((state) => state.commonStates);
   const { currentStep } = useSelector((state) => state.trip);
@@ -26,10 +27,11 @@ const navigate = useNavigate();
     try {
       dispatch(setCurrentStep(4));
       dispatch(showLoading());
+
       const data = await saveTrip(trip);
       dispatch(hideLoading());
       console.log(data);
- 
+     
       navigate(`/itinerary/${data.trip._id}`);
     } catch (err) {
       console.error(err);

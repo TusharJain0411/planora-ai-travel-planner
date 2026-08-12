@@ -8,16 +8,16 @@ const api = axios.create({
 });
 
 // Register
-export const registerUser = async (userData) => {
-  const res = await api.post("/register", userData);
-  return res.data;
-};
+// export const registerUser = async (userData) => {
+//   const res = await api.post("/register", userData);
+//   return res.data;
+// };
 
 // Login
-export const loginUser = async (userData) => {
-  const res = await api.post("/login", userData);
-  return res.data;
-};
+// export const loginUser = async (userData) => {
+//   const res = await api.post("/login", userData);
+//   return res.data;
+// };
 
 // Google Login
 export const googleLogin = async (idToken) => {
