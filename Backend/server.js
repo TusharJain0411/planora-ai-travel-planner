@@ -13,25 +13,12 @@ connectDB();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://planora-ai-travel-planner-irpi6oybb-tushars-projects-bb977c1f.vercel.app",
+  "https://planora-ai-travel-planner-alpha.vercel.app",
 ];
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // Allow requests without origin (Postman, server-to-server, etc.)
-      if (!origin) {
-        return callback(null, true);
-      }
-
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      console.log("Blocked CORS origin:", origin);
-
-      return callback(new Error("Not allowed by CORS"));
-    },
+    origin: allowedOrigins,
     credentials: true,
   }),
 );
