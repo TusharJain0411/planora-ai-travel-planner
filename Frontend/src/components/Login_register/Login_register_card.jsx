@@ -74,7 +74,7 @@ function Login_register_card() {
       const provider = new GoogleAuthProvider();
 
       // Open popup immediately from the button click
-      const result = await signInWithPopup(auth, provider);
+       signInWithRedirect(auth, provider);
 
       console.log("Google user:", result.user);
 
@@ -111,6 +111,33 @@ function Login_register_card() {
       setLoading(false);
     }
   };
+
+
+  useEffect(() => {
+    getRedirectResult(auth)
+      .then(async (result) => {
+        if (!result) return; // no redirect result, normal load
+
+        setLoading(true);
+        const idToken = await result.user.getIdToken();
+        const data = await googleLogin(idToken);
+
+        dispatch(loginSuccess(data));
+        dispatch(setTheme(data.user.theme));
+        toast.success("Login Successful");
+        dispatch(setOpenLogin(false));
+        navigate("/");
+      })
+      .catch((err) => {
+        const message =
+          err.response?.data?.message || err.message || "Google Login Failed";
+        dispatch(setError(message));
+        toast.error(message);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+
   
   return (
     <div className="register-card">
