@@ -1,143 +1,37 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import "../../CSS/Login_register_card.css";
 
 import { useDispatch } from "react-redux";
 import { FaPlaneDeparture, FaGoogle } from "react-icons/fa";
 
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 
-import { googleLogin } from "../../services/authAPI";
-
-import toast from "react-hot-toast";
-
-import { loginSuccess, setError } from "../../Redux/Slice/userSlice";
-import { setOpenLogin,setTheme } from "../../Redux/Slice/CommonStatesSlice";
-
-import { useNavigate } from "react-router-dom";
+import { setOpenLogin } from "../../Redux/Slice/CommonStatesSlice";
 
 function Login_register_card() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-
   const [loading, setLoading] = useState(false);
-
-  // const handleGoogleLogin = async () => {
-  //   try {
-  //     setLoading(true);
-
-  //     // 1. Create Google provider
-  //     const provider = new GoogleAuthProvider();
-
-  //     // 2. Open Google login popup
-  //     const result = await signInWithPopup(auth, provider);
-
-  //     console.log("Google user:", result.user);
-
-  //     // 3. Get Firebase ID token
-  //     const idToken = await result.user.getIdToken();
-
-  //     console.log("Firebase ID token received");
-
-  //     // 4. Send token to your backend
-  //     const data = await googleLogin(idToken);
-
-  //     console.log("Backend response:", data);
-
-  //     // 5. Store login data in Redux
-  //     dispatch(loginSuccess(data));
-  //    dispatch(setTheme(data.user.theme));
-  //     toast.success("Login Successful");
-
-  //     // 6. Close login modal
-  //     dispatch(setOpenLogin(false));
-
-  //     // 7. Navigate to home
-  //     navigate("/");
-  //   } catch (err) {
-  //     console.error("Google Login Error:", err);
-
-  //     const message =
-  //       err.response?.data?.message || err.message || "Google Login Failed";
-
-  //     dispatch(setError(message));
-
-  //     toast.error(message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   const handleGoogleLogin = async () => {
     try {
-      // Create provider first
-      const provider = new GoogleAuthProvider();
-
-      // Open popup immediately from the button click
-       signInWithRedirect(auth, provider);
-
-      console.log("Google user:", result.user);
-
-      // Now loading is useful
       setLoading(true);
 
-      const idToken = await result.user.getIdToken();
+      const provider = new GoogleAuthProvider();
 
-      console.log("Firebase ID token received");
+      // Optional: force Google account selection
+      provider.setCustomParameters({
+        prompt: "select_account",
+      });
 
-      const data = await googleLogin(idToken);
-
-      console.log("Backend response:", data);
-
-      dispatch(loginSuccess(data));
-
-      dispatch(setTheme(data.user.theme));
-
-      toast.success("Login Successful");
-
-      dispatch(setOpenLogin(false));
-
-      navigate("/");
+      // Redirect to Google
+      await signInWithRedirect(auth, provider);
     } catch (err) {
       console.error("Google Login Error:", err);
 
-      const message =
-        err.response?.data?.message || err.message || "Google Login Failed";
-
-      dispatch(setError(message));
-
-      toast.error(message);
-    } finally {
       setLoading(false);
     }
   };
-
-
-  useEffect(() => {
-    getRedirectResult(auth)
-      .then(async (result) => {
-        if (!result) return; // no redirect result, normal load
-
-        setLoading(true);
-        const idToken = await result.user.getIdToken();
-        const data = await googleLogin(idToken);
-
-        dispatch(loginSuccess(data));
-        dispatch(setTheme(data.user.theme));
-        toast.success("Login Successful");
-        dispatch(setOpenLogin(false));
-        navigate("/");
-      })
-      .catch((err) => {
-        const message =
-          err.response?.data?.message || err.message || "Google Login Failed";
-        dispatch(setError(message));
-        toast.error(message);
-      })
-      .finally(() => setLoading(false));
-  }, []);
-
-
 
   return (
     <div className="register-card">
@@ -160,9 +54,9 @@ function Login_register_card() {
         onClick={handleGoogleLogin}
         disabled={loading}
       >
-        <i class="fa-brands fa-google"></i>
+        <FaGoogle />
 
-        {loading ? "Signing in..." : "Continue with Google"}
+        {loading ? "Redirecting to Google..." : "Continue with Google"}
       </button>
     </div>
   );

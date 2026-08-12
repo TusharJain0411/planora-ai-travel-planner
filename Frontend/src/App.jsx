@@ -12,6 +12,7 @@ import Itinerary from './pages/Itinerary';
 import Trips from './pages/Trips';
 import ExploreTrip from "./pages/ExploreTrip";
 import EditTravelDetails from './pages/EditTravelDetails';
+import AuthRedirectHandler from "./components/AuthRedirectHandler";
 
 
 function App() {
@@ -21,6 +22,7 @@ const theme = useSelector((item) => item.commonStates.theme);
 
   return (
     <>
+      <AuthRedirectHandler />
       <div className={`${theme ? "dark-bg" : "light-bg"}`}>
         <Toaster position="top-right" reverseOrder={false} />
         <BrowserRouter>
@@ -36,12 +38,11 @@ const theme = useSelector((item) => item.commonStates.theme);
             <Route
               path="/explore"
               element={
-               <ProtectedRoute>
+                <ProtectedRoute>
                   <Layout>
                     <Explore />
                   </Layout>
-               </ProtectedRoute>
-               
+                </ProtectedRoute>
               }
             />
             <Route
@@ -49,19 +50,17 @@ const theme = useSelector((item) => item.commonStates.theme);
               element={
                 <ProtectedRoute>
                   <TraverlDetails />
-               </ProtectedRoute>
+                </ProtectedRoute>
               }
             />
             <Route
               path="/trips"
               element={
-               <ProtectedRoute>
-
+                <ProtectedRoute>
                   <Layout>
                     <Trips />
                   </Layout>
-               </ProtectedRoute>
-                
+                </ProtectedRoute>
               }
             />
             <Route
@@ -70,7 +69,8 @@ const theme = useSelector((item) => item.commonStates.theme);
                 <ProtectedRoute>
                   <Layout>
                     <Itinerary />
-                  </Layout>/
+                  </Layout>
+                  /
                 </ProtectedRoute>
               }
             />
@@ -86,13 +86,14 @@ const theme = useSelector((item) => item.commonStates.theme);
               }
             />
 
-            <Route path="/edit-trip/:tripId" element={<ProtectedRoute>
-
-              <EditTravelDetails />
-            </ProtectedRoute>
-              } />
-
-
+            <Route
+              path="/edit-trip/:tripId"
+              element={
+                <ProtectedRoute>
+                  <EditTravelDetails />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </BrowserRouter>
       </div>
