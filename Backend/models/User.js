@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema(
     },
     theme: {
       type: Boolean,
-      default: false, // false = light, true = dark
+      default: true, // false = light, true = dark
     },
 
     photo: String,

@@ -22,37 +22,81 @@ function Login_register_card() {
 
   const [loading, setLoading] = useState(false);
 
+  // const handleGoogleLogin = async () => {
+  //   try {
+  //     setLoading(true);
+
+  //     // 1. Create Google provider
+  //     const provider = new GoogleAuthProvider();
+
+  //     // 2. Open Google login popup
+  //     const result = await signInWithPopup(auth, provider);
+
+  //     console.log("Google user:", result.user);
+
+  //     // 3. Get Firebase ID token
+  //     const idToken = await result.user.getIdToken();
+
+  //     console.log("Firebase ID token received");
+
+  //     // 4. Send token to your backend
+  //     const data = await googleLogin(idToken);
+
+  //     console.log("Backend response:", data);
+
+  //     // 5. Store login data in Redux
+  //     dispatch(loginSuccess(data));
+  //    dispatch(setTheme(data.user.theme));
+  //     toast.success("Login Successful");
+
+  //     // 6. Close login modal
+  //     dispatch(setOpenLogin(false));
+
+  //     // 7. Navigate to home
+  //     navigate("/");
+  //   } catch (err) {
+  //     console.error("Google Login Error:", err);
+
+  //     const message =
+  //       err.response?.data?.message || err.message || "Google Login Failed";
+
+  //     dispatch(setError(message));
+
+  //     toast.error(message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   const handleGoogleLogin = async () => {
     try {
-      setLoading(true);
-
-      // 1. Create Google provider
+      // Create provider first
       const provider = new GoogleAuthProvider();
 
-      // 2. Open Google login popup
+      // Open popup immediately from the button click
       const result = await signInWithPopup(auth, provider);
 
       console.log("Google user:", result.user);
 
-      // 3. Get Firebase ID token
+      // Now loading is useful
+      setLoading(true);
+
       const idToken = await result.user.getIdToken();
 
       console.log("Firebase ID token received");
 
-      // 4. Send token to your backend
       const data = await googleLogin(idToken);
 
       console.log("Backend response:", data);
 
-      // 5. Store login data in Redux
       dispatch(loginSuccess(data));
-     dispatch(setTheme(data.user.theme));
+
+      dispatch(setTheme(data.user.theme));
+
       toast.success("Login Successful");
 
-      // 6. Close login modal
       dispatch(setOpenLogin(false));
 
-      // 7. Navigate to home
       navigate("/");
     } catch (err) {
       console.error("Google Login Error:", err);
@@ -67,7 +111,7 @@ function Login_register_card() {
       setLoading(false);
     }
   };
-
+  
   return (
     <div className="register-card">
       <div className="register-logo">
