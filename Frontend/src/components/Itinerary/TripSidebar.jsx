@@ -189,7 +189,7 @@ export default function TripSidebar({ trip }) {
       <div className="sidebar-lower">
 
       {/* AI Estimated Cost */}
-      <div
+      {/* <div
         className={`estimatedCost ${
           theme ? "" : "light-estimatedCost"
         }`}
@@ -230,7 +230,7 @@ export default function TripSidebar({ trip }) {
           <FiBookmark />
           Save Trip
         </button>
-      </div>
+      </div> */}
 
       </div>
 

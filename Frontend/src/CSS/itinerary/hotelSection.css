@@ -140,7 +140,7 @@
 
         max-width:380px;
 
-        scroll-snap-align:center;
+        scroll-snap-align:center !important;
     }
     
 /* ================= Mobile Horizontal Scroll ================= */

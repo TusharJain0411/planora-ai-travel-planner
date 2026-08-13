@@ -339,13 +339,7 @@ height: 220px !important;
 
  
 
-    .heroBadges{
-
-        display:grid;
-
-        grid-template-columns:repeat(3,1fr);
-
-    }
+    
 
     .badge{
 
