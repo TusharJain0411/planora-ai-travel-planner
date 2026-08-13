@@ -104,3 +104,165 @@ overflow-y: visible;
     scroll-snap-align: center;
    
 }
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .restaurantSection {
+        width: 92%;
+        margin: 35px auto;
+    }
+
+    .restaurantHeader {
+        margin-bottom: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .restaurantHeader h2 {
+        font-size: 1.7rem;
+    }
+
+    .restaurantHeader p {
+        font-size: 0.9rem;
+    }
+
+    .restaurantGrid {
+        gap: 16px;
+    }
+
+    .restaurant-card {
+        flex: 0 0 250px;
+        width: 250px;
+        max-width: 250px;
+    }
+
+    .restaurantScrollButton {
+        width: 38px;
+        height: 38px;
+    }
+
+    .restaurantScrollButton svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .restaurantScrollButtonLeft {
+        left: -8px;
+    }
+
+    .restaurantScrollButtonRight {
+        right: -8px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .restaurantSection {
+        width: 94%;
+        margin: 30px auto;
+    }
+
+    .restaurantHeader {
+        margin-bottom: 18px;
+        align-items: flex-start;
+    }
+
+    .restaurantHeader h2 {
+        font-size: 1.4rem;
+    }
+
+    .restaurantHeader p {
+        font-size: 0.82rem;
+        margin-top: 5px;
+    }
+
+    .restaurantGrid {
+        gap: 14px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .restaurant-card {
+        flex: 0 0 235px;
+        width: 235px;
+        max-width: 235px;
+        scroll-snap-align: center;
+    }
+
+    .restaurantScrollButton {
+        width: 34px;
+        height: 34px;
+    }
+
+    .restaurantScrollButton svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .restaurantScrollButtonLeft {
+        left: -7px;
+    }
+
+    .restaurantScrollButtonRight {
+        right: -7px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .restaurantSection {
+        width: 95%;
+        margin: 25px auto;
+    }
+
+    .restaurantHeader h2 {
+        font-size: 1.25rem;
+    }
+
+    .restaurantHeader p {
+        font-size: 0.78rem;
+    }
+
+    .restaurantGrid {
+        gap: 12px;
+    }
+
+    .restaurant-card {
+        flex: 0 0 220px;
+        width: 220px;
+        max-width: 220px;
+    }
+
+    .restaurantScrollButton {
+        width: 30px;
+        height: 30px;
+    }
+
+    .restaurantScrollButton svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .restaurantScrollButtonLeft {
+        left: -5px;
+    }
+
+    .restaurantScrollButtonRight {
+        right: -5px;
+    }
+}
+

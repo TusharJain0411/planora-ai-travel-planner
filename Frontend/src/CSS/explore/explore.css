@@ -66,3 +66,262 @@
         font-size: 0.7rem;
     }
 }
+
+
+
+
+
+/* =========================================
+   DESTINATION SKELETON
+========================================= */
+
+.destinationSkeleton {
+  width: 100%;
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: rgba(20, 28, 43, 0.95);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+.light-destinationSkeleton{
+     background: rgba(245, 246, 249, 0.95);
+
+  border: 1px solid rgba(210, 209, 209, 0.781);
+
+ 
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================
+   SKELETON IMAGE
+========================================= */
+
+.skeletonImage {
+  width: 100%;
+  height: 220px;
+
+  background: #273247;
+}
+
+
+/* =========================================
+   SKELETON CONTENT
+========================================= */
+
+.skeletonContent {
+  padding: 20px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.skeletonTitle {
+  width: 65%;
+  height: 22px;
+
+  border-radius: 6px;
+
+  margin-bottom: 12px;
+
+  background: #273247;
+}
+
+.light-destinationSkeleton .skeletonImage,.light-destinationSkeleton .skeletonTitle,.light-destinationSkeleton .skeletonLocation,.light-destinationSkeleton .skeletonTag,.light-destinationSkeleton .skeletonLine,.light-destinationSkeleton .skeletonButton{
+    background: #eaeaea;
+}
+/* =========================================
+   LOCATION
+========================================= */
+
+.skeletonLocation {
+  width: 45%;
+  height: 15px;
+
+  border-radius: 5px;
+
+  margin-bottom: 18px;
+
+  background: #273247;
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.skeletonTags {
+  display: flex;
+  gap: 8px;
+
+  margin-bottom: 18px;
+}
+
+.skeletonTag {
+  width: 60px;
+  height: 24px;
+
+  border-radius: 20px;
+
+  background: #273247;
+}
+
+.skeletonTag:nth-child(2) {
+  width: 75px;
+}
+
+.skeletonTag:nth-child(3) {
+  width: 55px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.skeletonDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-bottom: 20px;
+}
+
+.skeletonLine {
+  display: block;
+
+  width: 100%;
+  height: 12px;
+
+  border-radius: 5px;
+
+  background: #273247;
+}
+
+.skeletonLine:last-child {
+  width: 75%;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.skeletonButton {
+  width: 100%;
+  height: 42px;
+
+  border-radius: 10px;
+
+  background: #273247;
+}
+
+
+/* =========================================
+   SHIMMER ANIMATION
+========================================= */
+
+.skeletonShimmer {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #273247;
+}
+
+.skeletonShimmer::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -150%;
+
+  width: 150%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+
+  animation: destinationShimmer 1.5s infinite;
+}
+
+@keyframes destinationShimmer {
+  0% {
+    left: -150%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .skeletonImage {
+    height: 200px;
+  }
+
+  .skeletonContent {
+    padding: 17px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .destinationSkeleton {
+    border-radius: 16px;
+  }
+
+  .skeletonImage {
+    height: 190px;
+  }
+
+  .skeletonContent {
+    padding: 15px;
+  }
+
+  .skeletonTitle {
+    height: 19px;
+  }
+
+  .skeletonLocation {
+    height: 13px;
+  }
+
+  .skeletonTag {
+    height: 22px;
+  }
+
+  .skeletonButton {
+    height: 40px;
+  }
+
+}

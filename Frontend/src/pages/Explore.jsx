@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "../CSS/explore/explore.css";
 
 import { useSelector } from "react-redux";
@@ -15,18 +15,28 @@ export default function Explore() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
+  // Loading state
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const filteredDestinations = useMemo(() => {
     const search = searchTerm.trim().toLowerCase();
 
     return destinations.filter((destination) => {
-      // Search
       const matchesSearch =
         search === "" ||
         destination.name.toLowerCase().includes(search) ||
         destination.country.toLowerCase().includes(search) ||
         destination.tags.some((tag) => tag.toLowerCase().includes(search));
 
-      // Category
       const matchesCategory =
         activeCategory === "All" ||
         destination.tags.some(
@@ -39,6 +49,7 @@ export default function Explore() {
 
   return (
     <div className={`explorePage ${theme ? "" : "light-explorePage"}`}>
+      {/* HERO */}
       <div className="exploreHero">
         <h1>Explore Destinations</h1>
 
@@ -48,15 +59,20 @@ export default function Explore() {
         </p>
       </div>
 
+      {/* SEARCH */}
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
+      {/* CATEGORY */}
       <CategoryFilter
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
       />
 
+      {/* DESTINATIONS */}
       <div className="destinationGrid">
-        {filteredDestinations.length > 0 ? (
+        {loading ? (
+          <DestinationSkeleton count={8} />
+        ) : filteredDestinations.length > 0 ? (
           filteredDestinations.map((destination) => (
             <DestinationCard key={destination.id} destination={destination} />
           ))
@@ -72,5 +88,43 @@ export default function Explore() {
         )}
       </div>
     </div>
+  );
+}
+
+/* =========================================
+   DESTINATION SKELETON
+========================================= */
+
+function DestinationSkeleton({ count = 8 }) {
+   const { theme } = useSelector((state) => state.commonStates);
+  return (
+    <>
+      {Array.from({ length: count }).map((_, index) => (
+        <div className={`destinationSkeleton ${theme?"":"light-destinationSkeleton"}`} key={index}>
+          {/* IMAGE */}
+          <div className="skeletonImage skeletonShimmer" />
+
+          {/* CONTENT */}
+          <div className="skeletonContent">
+            <div className="skeletonTitle skeletonShimmer" />
+
+            <div className="skeletonLocation skeletonShimmer" />
+
+            <div className="skeletonTags">
+              <span className="skeletonTag skeletonShimmer" />
+              <span className="skeletonTag skeletonShimmer" />
+              <span className="skeletonTag skeletonShimmer" />
+            </div>
+
+            <div className="skeletonDescription">
+              <span className="skeletonLine skeletonShimmer" />
+              <span className="skeletonLine skeletonShimmer" />
+            </div>
+
+            <div className="skeletonButton skeletonShimmer" />
+          </div>
+        </div>
+      ))}
+    </>
   );
 }

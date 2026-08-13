@@ -53,9 +53,10 @@ export const exploreTrips = [
     gallery: [
       "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=1200",
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200",
-      "https://images.unsplash.com/photo-1555400113-4961f8f6d87b?w=1200",
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200",
+      "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=1200",
+     "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=1200",
       "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=1200",
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4"
     ],
 
     budget: [
@@ -163,7 +164,8 @@ export const exploreTrips = [
       "https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=1200",
       "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1200",
       "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1200",
-      "https://images.unsplash.com/photo-1526481280695-3c4691f7f55f?w=1200",
+      "https://images.unsplash.com/photo-1513407030348-c983a97b98d8",
+      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf",
     ],
 
     budget: [
