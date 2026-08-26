@@ -132,17 +132,16 @@ Return JSON in this exact format:
 `;
 
   const response = await client.chat.completions.create({
-    model: "llama-3.3-70b-versatile",
-    messages: [
-      {
-        role: "user",
-        content: prompt,
-      },
-    ],
-    temperature: 0.7,
-    max_tokens: 4000,
-  });
-
+  model: "openai/gpt-oss-120b",
+  messages: [
+    {
+      role: "user",
+      content: prompt,
+    },
+  ],
+  temperature: 0.7,
+  max_tokens: 4000,
+});
   let result = response.choices[0].message.content;
 
   result = result
