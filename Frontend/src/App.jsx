@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./pages/Layout";
@@ -21,6 +21,8 @@ import EditTravelDetails from "./pages/EditTravelDetails";
 
 function App() {
   const theme = useSelector((state) => state.commonStates.theme);
+
+  
 
   return (
     <div className={`${theme ? "dark-bg" : "light-bg"}`}>

@@ -75,11 +75,14 @@ const handleDateClick = (day) => {
   let newEnd = endDate ? new Date(endDate) : null;
 
   if (!newStart || (newStart && newEnd)) {
+    // First click / start a new range
     newStart = selectedDate;
     newEnd = null;
   } else if (selectedDate < newStart) {
+    // Selected date is before current start
     newStart = selectedDate;
   } else {
+    // Second click / complete range
     newEnd = selectedDate;
   }
 
@@ -95,6 +98,11 @@ const handleDateClick = (day) => {
       duration: days,
     }),
   );
+
+  // Move to step 3 only when the range is complete
+  if (newStart && newEnd) {
+    dispatch(setCurrentStep(3));
+  }
 };
   
   const isSameDate = (date1, date2) => {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "../CSS/travelDetails.css"
 import Stepper from "../components/travelDetails/Stepper"
 import Destination from '../components/travelDetails/Destination'
@@ -18,10 +18,14 @@ import { hideLoading, showLoading } from '../Redux/Slice/CommonStatesSlice';
 
 function TraverlDetails() {
   const {theme,loading} = useSelector((state) => state.commonStates);
-  const { currentStep } = useSelector((state) => state.trip);
+
 const trip = useSelector((state) => state.trip);
 const dispatch=useDispatch();
 const navigate = useNavigate();
+
+const { currentStep, travelDates } = useSelector((state) => state.trip);
+
+const { startDate, endDate } = travelDates;
 
   const handleGenerate = async () => {
     try {
@@ -41,6 +45,13 @@ const navigate = useNavigate();
     }
   };
 
+
+  useEffect(() => {
+    if (startDate && endDate && currentStep === 2) {
+      dispatch(setCurrentStep(3));
+    }
+  }, [startDate, endDate, currentStep]);
+  
   return (
     <>
       <Stepper />
